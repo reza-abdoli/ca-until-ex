@@ -1,0 +1,352 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0x2E917B8975DB3D49",
+      "device": "xc7z010clg400-1",
+      "name": "design_1",
+      "synth_flow_mode": "Hierarchical",
+      "tool_version": "2018.3"
+    },
+    "design_tree": {
+      "xlconstant_0": "",
+      "Adder": "",
+      "register_0": "",
+      "register_1": "",
+      "register_2": "",
+      "register_3": "",
+      "ProgramCounter_0": "",
+      "Mux2to1_0": "",
+      "InstructionMemory_0": ""
+    },
+    "ports": {
+      "clk_0": {
+        "type": "clk",
+        "direction": "I"
+      },
+      "rst_0": {
+        "type": "rst",
+        "direction": "I"
+      },
+      "pout_0": {
+        "direction": "O",
+        "left": "31",
+        "right": "0"
+      }
+    },
+    "components": {
+      "xlconstant_0": {
+        "vlnv": "xilinx.com:ip:xlconstant:1.1",
+        "xci_name": "design_1_xlconstant_0_0",
+        "parameters": {
+          "CONST_VAL": {
+            "value": "4"
+          },
+          "CONST_WIDTH": {
+            "value": "32"
+          }
+        }
+      },
+      "Adder": {
+        "vlnv": "xilinx.com:module_ref:Adder:1.0",
+        "xci_name": "design_1_Adder_0_2",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "Adder",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "a": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "b": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "out": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          }
+        }
+      },
+      "register_0": {
+        "vlnv": "xilinx.com:module_ref:register:1.0",
+        "xci_name": "design_1_register_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "register",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I"
+          },
+          "rst": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "pin": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "pout": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          }
+        }
+      },
+      "register_1": {
+        "vlnv": "xilinx.com:module_ref:register:1.0",
+        "xci_name": "design_1_register_0_1",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "register",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I"
+          },
+          "rst": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "pin": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "pout": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          }
+        }
+      },
+      "register_2": {
+        "vlnv": "xilinx.com:module_ref:register:1.0",
+        "xci_name": "design_1_register_0_2",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "register",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I"
+          },
+          "rst": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "pin": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "pout": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          }
+        }
+      },
+      "register_3": {
+        "vlnv": "xilinx.com:module_ref:register:1.0",
+        "xci_name": "design_1_register_0_3",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "register",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I"
+          },
+          "rst": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "pin": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "pout": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          }
+        }
+      },
+      "ProgramCounter_0": {
+        "vlnv": "xilinx.com:module_ref:ProgramCounter:1.0",
+        "xci_name": "design_1_ProgramCounter_0_1",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "ProgramCounter",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "rst": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "clk": {
+            "type": "clk",
+            "direction": "I"
+          },
+          "pcIn": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "pcOut": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "freeze": {
+            "direction": "I"
+          }
+        }
+      },
+      "Mux2to1_0": {
+        "vlnv": "xilinx.com:module_ref:Mux2to1:1.0",
+        "xci_name": "design_1_Mux2to1_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "Mux2to1",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "select": {
+            "direction": "I"
+          },
+          "in0": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "in1": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "out": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          }
+        }
+      },
+      "InstructionMemory_0": {
+        "vlnv": "xilinx.com:module_ref:InstructionMemory:1.0",
+        "xci_name": "design_1_InstructionMemory_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "InstructionMemory",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "memAddr": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "mem": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          }
+        }
+      }
+    },
+    "nets": {
+      "xlconstant_0_dout": {
+        "ports": [
+          "xlconstant_0/dout",
+          "Adder/a"
+        ]
+      },
+      "clk_0_1": {
+        "ports": [
+          "clk_0",
+          "register_0/clk",
+          "register_2/clk",
+          "register_1/clk",
+          "register_3/clk",
+          "ProgramCounter_0/clk"
+        ]
+      },
+      "rst_0_1": {
+        "ports": [
+          "rst_0",
+          "register_0/rst",
+          "register_2/rst",
+          "register_1/rst",
+          "register_3/rst",
+          "ProgramCounter_0/rst"
+        ]
+      },
+      "register_3_pout": {
+        "ports": [
+          "register_3/pout",
+          "pout_0"
+        ]
+      },
+      "register_0_pout": {
+        "ports": [
+          "register_0/pout",
+          "register_1/pin"
+        ]
+      },
+      "register_1_pout": {
+        "ports": [
+          "register_1/pout",
+          "register_2/pin"
+        ]
+      },
+      "register_2_pout": {
+        "ports": [
+          "register_2/pout",
+          "register_3/pin"
+        ]
+      },
+      "InstructionMemory_0_mem": {
+        "ports": [
+          "InstructionMemory_0/mem",
+          "register_0/pin"
+        ]
+      },
+      "ProgramCounter_0_pcOut": {
+        "ports": [
+          "ProgramCounter_0/pcOut",
+          "Adder/b",
+          "InstructionMemory_0/memAddr"
+        ]
+      },
+      "Mux2to1_0_out": {
+        "ports": [
+          "Mux2to1_0/out",
+          "ProgramCounter_0/pcIn"
+        ]
+      },
+      "AdderIf_out": {
+        "ports": [
+          "Adder/out",
+          "Mux2to1_0/in0"
+        ]
+      }
+    }
+  }
+}

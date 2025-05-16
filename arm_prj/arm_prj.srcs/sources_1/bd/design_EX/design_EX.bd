@@ -1,0 +1,1094 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0x6DD7B2752A819C37",
+      "device": "xc7z010clg400-1",
+      "name": "design_EX",
+      "synth_flow_mode": "Hierarchical",
+      "tool_version": "2018.3",
+      "validated": "true"
+    },
+    "design_tree": {
+      "ID_Stage_0": "",
+      "IF_0": "",
+      "RegsIfId_0": "",
+      "EXE_Stage_0": "",
+      "StatusRegister_0": "",
+      "xlconstant_0": "",
+      "ID_Stage_Reg_0": "",
+      "EXE_Stage_Reg_0": ""
+    },
+    "ports": {
+      "branchAddress_0": {
+        "direction": "I",
+        "left": "31",
+        "right": "0"
+      },
+      "branchTaken_0": {
+        "direction": "I"
+      },
+      "clk_0": {
+        "type": "clk",
+        "direction": "I",
+        "parameters": {
+          "ASSOCIATED_RESET": {
+            "value": "rst_0",
+            "value_src": "default"
+          },
+          "CLK_DOMAIN": {
+            "value": "design_EX_clk_0",
+            "value_src": "default"
+          },
+          "FREQ_HZ": {
+            "value": "100000000",
+            "value_src": "default"
+          },
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "PHASE": {
+            "value": "0.000",
+            "value_src": "default"
+          }
+        }
+      },
+      "freeze_0": {
+        "direction": "I"
+      },
+      "rst_0": {
+        "type": "rst",
+        "direction": "I",
+        "parameters": {
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "POLARITY": {
+            "value": "ACTIVE_LOW",
+            "value_src": "default"
+          }
+        }
+      },
+      "freeze_1": {
+        "direction": "I"
+      },
+      "ALU_ResOut_0": {
+        "direction": "O",
+        "left": "31",
+        "right": "0"
+      }
+    },
+    "components": {
+      "ID_Stage_0": {
+        "vlnv": "xilinx.com:module_ref:ID_Stage:1.0",
+        "xci_name": "design_EX_ID_Stage_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "ID_Stage",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "left": "0",
+            "right": "0",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "rst",
+                "value_src": "constant"
+              },
+              "CLK_DOMAIN": {
+                "value": "design_EX_clk_0",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "rst": {
+            "type": "rst",
+            "direction": "I",
+            "left": "0",
+            "right": "0"
+          },
+          "instructionIn": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "WB_ENIn": {
+            "direction": "I",
+            "left": "0",
+            "right": "0"
+          },
+          "WB_DestIn": {
+            "direction": "I",
+            "left": "3",
+            "right": "0"
+          },
+          "WB_ValueIn": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "HazardIn": {
+            "direction": "I",
+            "left": "0",
+            "right": "0"
+          },
+          "statusIn": {
+            "direction": "I",
+            "left": "3",
+            "right": "0"
+          },
+          "Val_RnOut": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "Val_RmOut": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "TwoSrcOut": {
+            "direction": "O",
+            "left": "0",
+            "right": "0"
+          },
+          "SOut": {
+            "direction": "O",
+            "left": "0",
+            "right": "0"
+          },
+          "BOut": {
+            "direction": "O",
+            "left": "0",
+            "right": "0"
+          },
+          "EXE_CMDOut": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          },
+          "MEM_W_ENOut": {
+            "direction": "O",
+            "left": "0",
+            "right": "0"
+          },
+          "MEM_R_ENOut": {
+            "direction": "O",
+            "left": "0",
+            "right": "0"
+          },
+          "DestOut": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          },
+          "IOut": {
+            "direction": "O",
+            "left": "0",
+            "right": "0"
+          },
+          "shiftOperandOut": {
+            "direction": "O",
+            "left": "11",
+            "right": "0"
+          },
+          "WB_ENOut": {
+            "direction": "O",
+            "left": "0",
+            "right": "0"
+          },
+          "Imm24Out": {
+            "direction": "O",
+            "left": "23",
+            "right": "0"
+          },
+          "src1Out": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          },
+          "src2Out": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          }
+        }
+      },
+      "IF_0": {
+        "vlnv": "xilinx.com:module_ref:IF:1.0",
+        "xci_name": "design_EX_IF_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "IF",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "rst",
+                "value_src": "constant"
+              },
+              "CLK_DOMAIN": {
+                "value": "design_EX_clk_0",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "rst": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "branchTaken": {
+            "direction": "I"
+          },
+          "freeze": {
+            "direction": "I"
+          },
+          "branchAddress": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "PC": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "instruction": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          }
+        }
+      },
+      "RegsIfId_0": {
+        "vlnv": "xilinx.com:module_ref:RegsIfId:1.0",
+        "xci_name": "design_EX_RegsIfId_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "RegsIfId",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "rst",
+                "value_src": "constant"
+              },
+              "CLK_DOMAIN": {
+                "value": "design_EX_clk_0",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "rst": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "freeze": {
+            "direction": "I"
+          },
+          "flush": {
+            "direction": "I"
+          },
+          "pcIn": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "instructionIn": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "pcOut": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "instructionOut": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          }
+        }
+      },
+      "EXE_Stage_0": {
+        "vlnv": "xilinx.com:module_ref:EXE_Stage:1.0",
+        "xci_name": "design_EX_EXE_Stage_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "EXE_Stage",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "left": "0",
+            "right": "0",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "rst",
+                "value_src": "constant"
+              },
+              "CLK_DOMAIN": {
+                "value": "design_EX_clk_0",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "rst": {
+            "type": "rst",
+            "direction": "I",
+            "left": "0",
+            "right": "0"
+          },
+          "MEM_R_ENIn": {
+            "direction": "I",
+            "left": "0",
+            "right": "0"
+          },
+          "MEM_W_ENIn": {
+            "direction": "I",
+            "left": "0",
+            "right": "0"
+          },
+          "EXE_CMDIn": {
+            "direction": "I",
+            "left": "3",
+            "right": "0"
+          },
+          "PCIn": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "Val_RnIn": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "Val_RmIn": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "shiftOperandIn": {
+            "direction": "I",
+            "left": "11",
+            "right": "0"
+          },
+          "IIn": {
+            "direction": "I",
+            "left": "0",
+            "right": "0"
+          },
+          "Imm24In": {
+            "direction": "I",
+            "left": "23",
+            "right": "0"
+          },
+          "statusIn": {
+            "direction": "I",
+            "left": "3",
+            "right": "0"
+          },
+          "ALU_ResOut": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "statusOut": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          },
+          "branchAddressOut": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "WB_ValueIn": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "ALU_ResIn": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "selSrc1In": {
+            "direction": "I",
+            "left": "1",
+            "right": "0"
+          },
+          "selSrc2In": {
+            "direction": "I",
+            "left": "1",
+            "right": "0"
+          }
+        }
+      },
+      "StatusRegister_0": {
+        "vlnv": "xilinx.com:module_ref:StatusRegister:1.0",
+        "xci_name": "design_EX_StatusRegister_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "StatusRegister",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "left": "0",
+            "right": "0",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "rst",
+                "value_src": "constant"
+              },
+              "CLK_DOMAIN": {
+                "value": "design_EX_clk_0",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "rst": {
+            "type": "rst",
+            "direction": "I",
+            "left": "0",
+            "right": "0"
+          },
+          "en": {
+            "direction": "I",
+            "left": "0",
+            "right": "0"
+          },
+          "statIn": {
+            "direction": "I",
+            "left": "3",
+            "right": "0"
+          },
+          "statOut": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          }
+        }
+      },
+      "xlconstant_0": {
+        "vlnv": "xilinx.com:ip:xlconstant:1.1",
+        "xci_name": "design_EX_xlconstant_0_0",
+        "parameters": {
+          "CONST_VAL": {
+            "value": "0"
+          },
+          "CONST_WIDTH": {
+            "value": "32"
+          }
+        }
+      },
+      "ID_Stage_Reg_0": {
+        "vlnv": "xilinx.com:module_ref:ID_Stage_Reg:1.0",
+        "xci_name": "design_EX_ID_Stage_Reg_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "ID_Stage_Reg",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "left": "0",
+            "right": "0",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "rst",
+                "value_src": "constant"
+              },
+              "CLK_DOMAIN": {
+                "value": "design_EX_clk_0",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "rst": {
+            "type": "rst",
+            "direction": "I",
+            "left": "0",
+            "right": "0"
+          },
+          "en": {
+            "direction": "I",
+            "left": "0",
+            "right": "0"
+          },
+          "clr": {
+            "direction": "I",
+            "left": "0",
+            "right": "0"
+          },
+          "PCIn": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "PCOut": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "WB_ENIn": {
+            "direction": "I",
+            "left": "0",
+            "right": "0"
+          },
+          "WB_ENOut": {
+            "direction": "O",
+            "left": "0",
+            "right": "0"
+          },
+          "MEM_R_ENIn": {
+            "direction": "I",
+            "left": "0",
+            "right": "0"
+          },
+          "MEM_R_ENOut": {
+            "direction": "O",
+            "left": "0",
+            "right": "0"
+          },
+          "MEM_W_ENIn": {
+            "direction": "I",
+            "left": "0",
+            "right": "0"
+          },
+          "MEM_W_ENOut": {
+            "direction": "O",
+            "left": "0",
+            "right": "0"
+          },
+          "EXE_CMDIn": {
+            "direction": "I",
+            "left": "3",
+            "right": "0"
+          },
+          "EXE_CMDOut": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          },
+          "BIn": {
+            "direction": "I",
+            "left": "0",
+            "right": "0"
+          },
+          "BOut": {
+            "direction": "O",
+            "left": "0",
+            "right": "0"
+          },
+          "SIn": {
+            "direction": "I",
+            "left": "0",
+            "right": "0"
+          },
+          "SOut": {
+            "direction": "O",
+            "left": "0",
+            "right": "0"
+          },
+          "Val_RmIn": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "Val_RmOut": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "Val_RnIn": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "Val_RnOut": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "shiftOperandIn": {
+            "direction": "I",
+            "left": "11",
+            "right": "0"
+          },
+          "shiftOperandOut": {
+            "direction": "O",
+            "left": "11",
+            "right": "0"
+          },
+          "IIn": {
+            "direction": "I",
+            "left": "0",
+            "right": "0"
+          },
+          "IOut": {
+            "direction": "O",
+            "left": "0",
+            "right": "0"
+          },
+          "Imm24In": {
+            "direction": "I",
+            "left": "23",
+            "right": "0"
+          },
+          "Imm24Out": {
+            "direction": "O",
+            "left": "23",
+            "right": "0"
+          },
+          "DestIn": {
+            "direction": "I",
+            "left": "3",
+            "right": "0"
+          },
+          "DestOut": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          },
+          "statusIn": {
+            "direction": "I",
+            "left": "3",
+            "right": "0"
+          },
+          "statusOut": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          },
+          "src1In": {
+            "direction": "I",
+            "left": "3",
+            "right": "0"
+          },
+          "src1Out": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          },
+          "src2In": {
+            "direction": "I",
+            "left": "3",
+            "right": "0"
+          },
+          "src2Out": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          }
+        }
+      },
+      "EXE_Stage_Reg_0": {
+        "vlnv": "xilinx.com:module_ref:EXE_Stage_Reg:1.0",
+        "xci_name": "design_EX_EXE_Stage_Reg_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "EXE_Stage_Reg",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "left": "0",
+            "right": "0",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "rst",
+                "value_src": "constant"
+              },
+              "CLK_DOMAIN": {
+                "value": "design_EX_clk_0",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "rst": {
+            "type": "rst",
+            "direction": "I",
+            "left": "0",
+            "right": "0"
+          },
+          "en": {
+            "direction": "I",
+            "left": "0",
+            "right": "0"
+          },
+          "clr": {
+            "direction": "I",
+            "left": "0",
+            "right": "0"
+          },
+          "WB_ENIn": {
+            "direction": "I",
+            "left": "0",
+            "right": "0"
+          },
+          "WB_ENOut": {
+            "direction": "O",
+            "left": "0",
+            "right": "0"
+          },
+          "MEM_R_ENIn": {
+            "direction": "I",
+            "left": "0",
+            "right": "0"
+          },
+          "MEM_R_ENOut": {
+            "direction": "O",
+            "left": "0",
+            "right": "0"
+          },
+          "MEM_W_ENIn": {
+            "direction": "I",
+            "left": "0",
+            "right": "0"
+          },
+          "MEM_W_ENOut": {
+            "direction": "O",
+            "left": "0",
+            "right": "0"
+          },
+          "ALU_ResIn": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "ALU_ResOut": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "Val_RmIn": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "Val_RmOut": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "DestIn": {
+            "direction": "I",
+            "left": "3",
+            "right": "0"
+          },
+          "DestOut": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          }
+        }
+      }
+    },
+    "nets": {
+      "ID_Stage_0_BOut": {
+        "ports": [
+          "ID_Stage_0/BOut",
+          "ID_Stage_Reg_0/BIn"
+        ]
+      },
+      "ID_Stage_0_DestOut": {
+        "ports": [
+          "ID_Stage_0/DestOut",
+          "ID_Stage_Reg_0/DestIn"
+        ]
+      },
+      "ID_Stage_0_EXE_CMDOut": {
+        "ports": [
+          "ID_Stage_0/EXE_CMDOut",
+          "ID_Stage_Reg_0/EXE_CMDIn"
+        ]
+      },
+      "ID_Stage_0_IOut": {
+        "ports": [
+          "ID_Stage_0/IOut",
+          "ID_Stage_Reg_0/IIn"
+        ]
+      },
+      "ID_Stage_0_Imm24Out": {
+        "ports": [
+          "ID_Stage_0/Imm24Out",
+          "ID_Stage_Reg_0/Imm24In"
+        ]
+      },
+      "ID_Stage_0_MEM_R_ENOut": {
+        "ports": [
+          "ID_Stage_0/MEM_R_ENOut",
+          "ID_Stage_Reg_0/MEM_R_ENIn"
+        ]
+      },
+      "ID_Stage_0_MEM_W_ENOut": {
+        "ports": [
+          "ID_Stage_0/MEM_W_ENOut",
+          "ID_Stage_Reg_0/MEM_W_ENIn"
+        ]
+      },
+      "ID_Stage_0_SOut": {
+        "ports": [
+          "ID_Stage_0/SOut",
+          "ID_Stage_Reg_0/SIn"
+        ]
+      },
+      "ID_Stage_0_Val_RmOut": {
+        "ports": [
+          "ID_Stage_0/Val_RmOut",
+          "ID_Stage_Reg_0/Val_RmIn"
+        ]
+      },
+      "ID_Stage_0_Val_RnOut": {
+        "ports": [
+          "ID_Stage_0/Val_RnOut",
+          "ID_Stage_Reg_0/Val_RnIn"
+        ]
+      },
+      "ID_Stage_0_WB_ENOut": {
+        "ports": [
+          "ID_Stage_0/WB_ENOut",
+          "ID_Stage_Reg_0/WB_ENIn"
+        ]
+      },
+      "ID_Stage_0_shiftOperandOut": {
+        "ports": [
+          "ID_Stage_0/shiftOperandOut",
+          "ID_Stage_Reg_0/shiftOperandIn"
+        ]
+      },
+      "ID_Stage_0_src1Out": {
+        "ports": [
+          "ID_Stage_0/src1Out",
+          "ID_Stage_Reg_0/src1In"
+        ]
+      },
+      "ID_Stage_0_src2Out": {
+        "ports": [
+          "ID_Stage_0/src2Out",
+          "ID_Stage_Reg_0/src2In"
+        ]
+      },
+      "IF_0_PC": {
+        "ports": [
+          "IF_0/PC",
+          "RegsIfId_0/pcIn"
+        ]
+      },
+      "IF_0_instruction": {
+        "ports": [
+          "IF_0/instruction",
+          "RegsIfId_0/instructionIn"
+        ]
+      },
+      "RegsIfId_0_instructionOut": {
+        "ports": [
+          "RegsIfId_0/instructionOut",
+          "ID_Stage_0/instructionIn"
+        ]
+      },
+      "RegsIfId_0_pcOut": {
+        "ports": [
+          "RegsIfId_0/pcOut",
+          "ID_Stage_Reg_0/PCIn"
+        ]
+      },
+      "branchAddress_0_1": {
+        "ports": [
+          "branchAddress_0",
+          "IF_0/branchAddress"
+        ]
+      },
+      "branchTaken_0_1": {
+        "ports": [
+          "branchTaken_0",
+          "RegsIfId_0/flush",
+          "IF_0/branchTaken",
+          "ID_Stage_Reg_0/clr",
+          "EXE_Stage_Reg_0/clr"
+        ]
+      },
+      "clk_0_1": {
+        "ports": [
+          "clk_0",
+          "RegsIfId_0/clk",
+          "IF_0/clk",
+          "ID_Stage_0/clk",
+          "EXE_Stage_0/clk",
+          "StatusRegister_0/clk",
+          "ID_Stage_Reg_0/clk",
+          "EXE_Stage_Reg_0/clk"
+        ]
+      },
+      "rst_0_1": {
+        "ports": [
+          "rst_0",
+          "RegsIfId_0/rst",
+          "IF_0/rst",
+          "ID_Stage_0/rst",
+          "EXE_Stage_0/rst",
+          "StatusRegister_0/rst",
+          "ID_Stage_Reg_0/rst",
+          "EXE_Stage_Reg_0/rst"
+        ]
+      },
+      "ID_Stage_Reg_0_MEM_R_ENOut": {
+        "ports": [
+          "ID_Stage_Reg_0/MEM_R_ENOut",
+          "EXE_Stage_0/MEM_R_ENIn",
+          "EXE_Stage_Reg_0/MEM_R_ENIn"
+        ]
+      },
+      "ID_Stage_Reg_0_MEM_W_ENOut": {
+        "ports": [
+          "ID_Stage_Reg_0/MEM_W_ENOut",
+          "EXE_Stage_0/MEM_W_ENIn",
+          "EXE_Stage_Reg_0/MEM_W_ENIn"
+        ]
+      },
+      "ID_Stage_Reg_0_EXE_CMDOut": {
+        "ports": [
+          "ID_Stage_Reg_0/EXE_CMDOut",
+          "EXE_Stage_0/EXE_CMDIn"
+        ]
+      },
+      "ID_Stage_Reg_0_PCOut": {
+        "ports": [
+          "ID_Stage_Reg_0/PCOut",
+          "EXE_Stage_0/PCIn"
+        ]
+      },
+      "ID_Stage_Reg_0_Val_RnOut": {
+        "ports": [
+          "ID_Stage_Reg_0/Val_RnOut",
+          "EXE_Stage_0/Val_RnIn"
+        ]
+      },
+      "ID_Stage_Reg_0_Val_RmOut": {
+        "ports": [
+          "ID_Stage_Reg_0/Val_RmOut",
+          "EXE_Stage_0/Val_RmIn"
+        ]
+      },
+      "ID_Stage_Reg_0_shiftOperandOut": {
+        "ports": [
+          "ID_Stage_Reg_0/shiftOperandOut",
+          "EXE_Stage_0/shiftOperandIn"
+        ]
+      },
+      "ID_Stage_Reg_0_IOut": {
+        "ports": [
+          "ID_Stage_Reg_0/IOut",
+          "EXE_Stage_0/IIn"
+        ]
+      },
+      "ID_Stage_Reg_0_Imm24Out": {
+        "ports": [
+          "ID_Stage_Reg_0/Imm24Out",
+          "EXE_Stage_0/Imm24In"
+        ]
+      },
+      "ID_Stage_Reg_0_src1Out": {
+        "ports": [
+          "ID_Stage_Reg_0/src1Out",
+          "EXE_Stage_0/selSrc1In"
+        ]
+      },
+      "ID_Stage_Reg_0_src2Out": {
+        "ports": [
+          "ID_Stage_Reg_0/src2Out",
+          "EXE_Stage_0/selSrc2In"
+        ]
+      },
+      "EXE_Stage_0_ALU_ResOut": {
+        "ports": [
+          "EXE_Stage_0/ALU_ResOut",
+          "EXE_Stage_Reg_0/ALU_ResIn"
+        ]
+      },
+      "ID_Stage_Reg_0_DestOut": {
+        "ports": [
+          "ID_Stage_Reg_0/DestOut",
+          "EXE_Stage_Reg_0/DestIn"
+        ]
+      },
+      "ID_Stage_Reg_0_statusOut": {
+        "ports": [
+          "ID_Stage_Reg_0/statusOut",
+          "EXE_Stage_0/statusIn"
+        ]
+      },
+      "ID_Stage_Reg_0_SOut": {
+        "ports": [
+          "ID_Stage_Reg_0/SOut",
+          "StatusRegister_0/en"
+        ]
+      },
+      "EXE_Stage_0_statusOut": {
+        "ports": [
+          "EXE_Stage_0/statusOut",
+          "StatusRegister_0/statIn"
+        ]
+      },
+      "freeze_1_1": {
+        "ports": [
+          "freeze_1",
+          "IF_0/freeze",
+          "RegsIfId_0/freeze",
+          "ID_Stage_Reg_0/en",
+          "EXE_Stage_Reg_0/en"
+        ]
+      },
+      "ID_Stage_Reg_0_WB_ENOut": {
+        "ports": [
+          "ID_Stage_Reg_0/WB_ENOut",
+          "EXE_Stage_Reg_0/WB_ENIn"
+        ]
+      },
+      "EXE_Stage_Reg_0_ALU_ResOut": {
+        "ports": [
+          "EXE_Stage_Reg_0/ALU_ResOut",
+          "ALU_ResOut_0"
+        ]
+      },
+      "xlconstant_0_dout": {
+        "ports": [
+          "xlconstant_0/dout",
+          "ID_Stage_0/WB_ENIn",
+          "ID_Stage_0/WB_DestIn",
+          "ID_Stage_0/WB_ValueIn",
+          "ID_Stage_0/HazardIn",
+          "ID_Stage_0/statusIn",
+          "EXE_Stage_0/WB_ValueIn",
+          "EXE_Stage_0/ALU_ResIn",
+          "ID_Stage_Reg_0/statusIn",
+          "EXE_Stage_Reg_0/Val_RmIn"
+        ]
+      }
+    }
+  }
+}

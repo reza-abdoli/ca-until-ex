@@ -1,0 +1,26 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../arm_prj.srcs/sources_1/new/Adder.v" \
+"../../../../arm_prj.srcs/sources_1/new/InstructionMemory.v" \
+"../../../../arm_prj.srcs/sources_1/new/Mux2to1.v" \
+"../../../../arm_prj.srcs/sources_1/new/ProgramCounter.v" \
+"../../../../arm_prj.srcs/sources_1/new/IF.v" \
+"../../../../arm_prj.srcs/sources_1/new/RegIFId.v" \
+"../../../../arm_prj.srcs/sources_1/new/ConditionCheck.v" \
+"../../../../arm_prj.srcs/sources_1/new/ControlUnit.v" \
+"../../../../arm_prj.srcs/sources_1/new/RegisterFile.v" \
+"../../../../arm_prj.srcs/sources_1/new/ID_Stage.v" \
+"../../../../arm_prj.srcs/sources_1/new/ID_Stage_Reg.v" \
+"../../../../arm_prj.ip_user_files/bd/design_ID/ip/design_ID_IF_0_0/sim/design_ID_IF_0_0.v" \
+"../../../../arm_prj.ip_user_files/bd/design_ID/ip/design_ID_RegsIfId_0_0/sim/design_ID_RegsIfId_0_0.v" \
+"../../../../arm_prj.ip_user_files/bd/design_ID/ip/design_ID_ID_Stage_0_0/sim/design_ID_ID_Stage_0_0.v" \
+"../../../../arm_prj.ip_user_files/bd/design_ID/ip/design_ID_ID_Stage_Reg_0_0/sim/design_ID_ID_Stage_Reg_0_0.v" \
+"../../../../arm_prj.ip_user_files/bd/design_ID/sim/design_ID.v" \
+"../../../../arm_prj.srcs/sources_1/bd/design_ID/hdl/design_ID_wrapper.v" \
+"../../../../arm_prj.srcs/sim_1/new/ID_tb.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

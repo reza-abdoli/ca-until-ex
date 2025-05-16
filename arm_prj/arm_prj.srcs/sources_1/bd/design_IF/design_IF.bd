@@ -1,0 +1,193 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0x57EDB24B0DEF4E46",
+      "device": "xc7z010clg400-1",
+      "name": "design_IF",
+      "synth_flow_mode": "Hierarchical",
+      "tool_version": "2018.3"
+    },
+    "design_tree": {
+      "RegsIfId_0": "",
+      "IF_0": ""
+    },
+    "ports": {
+      "clk_0": {
+        "type": "clk",
+        "direction": "I"
+      },
+      "rst_0": {
+        "type": "rst",
+        "direction": "I"
+      },
+      "branchTaken_0": {
+        "direction": "I"
+      },
+      "freeze_0": {
+        "direction": "I"
+      },
+      "branchAddress_0": {
+        "direction": "I",
+        "left": "31",
+        "right": "0"
+      },
+      "pcOut_0": {
+        "direction": "O",
+        "left": "31",
+        "right": "0"
+      },
+      "instructionOut_0": {
+        "direction": "O",
+        "left": "31",
+        "right": "0"
+      }
+    },
+    "components": {
+      "RegsIfId_0": {
+        "vlnv": "xilinx.com:module_ref:RegsIfId:1.0",
+        "xci_name": "design_IF_RegsIfId_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "RegsIfId",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I"
+          },
+          "rst": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "freeze": {
+            "direction": "I"
+          },
+          "flush": {
+            "direction": "I"
+          },
+          "pcIn": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "instructionIn": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "pcOut": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "instructionOut": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          }
+        }
+      },
+      "IF_0": {
+        "vlnv": "xilinx.com:module_ref:IF:1.0",
+        "xci_name": "design_IF_IF_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "IF",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I"
+          },
+          "rst": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "branchTaken": {
+            "direction": "I"
+          },
+          "freeze": {
+            "direction": "I"
+          },
+          "branchAddress": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "PC": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "instruction": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          }
+        }
+      }
+    },
+    "nets": {
+      "clk_0_1": {
+        "ports": [
+          "clk_0",
+          "RegsIfId_0/clk",
+          "IF_0/clk"
+        ]
+      },
+      "rst_0_1": {
+        "ports": [
+          "rst_0",
+          "RegsIfId_0/rst",
+          "IF_0/rst"
+        ]
+      },
+      "branchTaken_0_1": {
+        "ports": [
+          "branchTaken_0",
+          "RegsIfId_0/flush",
+          "IF_0/branchTaken"
+        ]
+      },
+      "freeze_0_1": {
+        "ports": [
+          "freeze_0",
+          "RegsIfId_0/freeze",
+          "IF_0/freeze"
+        ]
+      },
+      "branchAddress_0_1": {
+        "ports": [
+          "branchAddress_0",
+          "IF_0/branchAddress"
+        ]
+      },
+      "RegsIfId_0": {
+        "ports": [
+          "RegsIfId_0/pcOut",
+          "pcOut_0"
+        ]
+      },
+      "RegsIfId_0_instructionOut": {
+        "ports": [
+          "RegsIfId_0/instructionOut",
+          "instructionOut_0"
+        ]
+      },
+      "IF_0_PC": {
+        "ports": [
+          "IF_0/PC",
+          "RegsIfId_0/pcIn"
+        ]
+      },
+      "IF_0_instruction": {
+        "ports": [
+          "IF_0/instruction",
+          "RegsIfId_0/instructionIn"
+        ]
+      }
+    }
+  }
+}

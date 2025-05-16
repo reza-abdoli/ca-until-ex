@@ -1,0 +1,30 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../arm_prj.srcs/sources_1/new/Adder.v" \
+"../../../../arm_prj.srcs/sources_1/new/InstructionMemory.v" \
+"../../../../arm_prj.srcs/sources_1/new/Mux2to1.v" \
+"../../../../arm_prj.srcs/sources_1/new/ProgramCounter.v" \
+"../../../../arm_prj.srcs/sources_1/new/IF.v" \
+"../../../../arm_prj.srcs/sources_1/new/Register.v" \
+"../../../../arm_prj.ip_user_files/bd/design_IF/ip/design_IF_IF_0_0/sim/design_IF_IF_0_0.v" \
+"../../../../arm_prj.ip_user_files/bd/design_IF/sim/design_IF.v" \
+"../../../../arm_prj.ip_user_files/bd/design_1/ip/design_1_ProgramCounter_0_1/sim/design_1_ProgramCounter_0_1.v" \
+"../../../../arm_prj.ip_user_files/bd/design_1/ip/design_1_xlconstant_0_0/sim/design_1_xlconstant_0_0.v" \
+"../../../../arm_prj.ip_user_files/bd/design_1/ip/design_1_Adder_0_2/sim/design_1_Adder_0_2.v" \
+"../../../../arm_prj.ip_user_files/bd/design_1/ip/design_1_register_0_0/sim/design_1_register_0_0.v" \
+"../../../../arm_prj.ip_user_files/bd/design_1/ip/design_1_register_0_1/sim/design_1_register_0_1.v" \
+"../../../../arm_prj.ip_user_files/bd/design_1/ip/design_1_register_0_2/sim/design_1_register_0_2.v" \
+"../../../../arm_prj.ip_user_files/bd/design_1/ip/design_1_register_0_3/sim/design_1_register_0_3.v" \
+"../../../../arm_prj.ip_user_files/bd/design_1/sim/design_1.v" \
+"../../../../arm_prj.ip_user_files/bd/design_1/ip/design_1_InstructionMemory_0_0/sim/design_1_InstructionMemory_0_0.v" \
+"../../../../arm_prj.ip_user_files/bd/design_1/ip/design_1_Mux2to1_0_0/sim/design_1_Mux2to1_0_0.v" \
+"../../../../arm_prj.srcs/sim_1/new/IF_testbench.v" \
+"../../../../arm_prj.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v" \
+"../../../../arm_prj.srcs/sources_1/bd/design_IF/hdl/design_IF_wrapper.v" \
+"../../../../arm_prj.srcs/sim_1/new/if_tb.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort
