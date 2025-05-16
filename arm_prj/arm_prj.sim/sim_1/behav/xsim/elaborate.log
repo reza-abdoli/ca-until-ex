@@ -1,7 +1,79 @@
 Vivado Simulator 2018.3
 Copyright 1986-1999, 2001-2018 Xilinx, Inc. All Rights Reserved.
-Running: C:/Xilinx/Vivado/2018.3/bin/unwrapped/win64.o/xelab.exe -wto 8cf86a9f9ea944a8b258102db2a0b16d --incr --debug typical --relax --mt 2 -L xil_defaultlib -L xlconstant_v1_1_5 -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot tb_design_EX_wrapper_behav xil_defaultlib.tb_design_EX_wrapper xil_defaultlib.glbl -log elaborate.log 
+Running: C:/Xilinx/Vivado/2018.3/bin/unwrapped/win64.o/xelab.exe -wto 8cf86a9f9ea944a8b258102db2a0b16d --incr --debug typical --relax --mt 2 -L xil_defaultlib -L xlconstant_v1_1_5 -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot tb_design_MEM_wrapper_behav xil_defaultlib.tb_design_MEM_wrapper xil_defaultlib.glbl -log elaborate.log 
 Using 2 slave threads.
 Starting static elaboration
+WARNING: [VRFC 10-3091] actual bit length 18 differs from formal bit length 1 for port 'SRAM_UB_NOut' [C:/Users/USER/Documents/Lessons/CA-Lab/from-if/1-start/arm_prj/arm_prj.srcs/sources_1/new/MEM_Stage.v:38]
+WARNING: [VRFC 10-3091] actual bit length 18 differs from formal bit length 1 for port 'SRAM_LB_NOut' [C:/Users/USER/Documents/Lessons/CA-Lab/from-if/1-start/arm_prj/arm_prj.srcs/sources_1/new/MEM_Stage.v:39]
+WARNING: [VRFC 10-3091] actual bit length 18 differs from formal bit length 1 for port 'SRAM_CE_NOut' [C:/Users/USER/Documents/Lessons/CA-Lab/from-if/1-start/arm_prj/arm_prj.srcs/sources_1/new/MEM_Stage.v:41]
+WARNING: [VRFC 10-3091] actual bit length 18 differs from formal bit length 1 for port 'SRAM_OE_NOut' [C:/Users/USER/Documents/Lessons/CA-Lab/from-if/1-start/arm_prj/arm_prj.srcs/sources_1/new/MEM_Stage.v:42]
 Completed static elaboration
-INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "C:/Users/USER/Documents/Lessons/CA-Lab/from-if/1-start/arm_prj/arm_prj.srcs/sources_1/new/EXE_Stage.v" Line 2. Module EXE_Stage doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/USER/Documents/Lessons/CA-Lab/from-if/1-start/arm_prj/arm_prj.srcs/sources_1/new/Mux4to1.v" Line 1. Module Mux4to1 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/USER/Documents/Lessons/CA-Lab/from-if/1-start/arm_prj/arm_prj.srcs/sources_1/new/Mux4to1.v" Line 1. Module Mux4to1 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/USER/Documents/Lessons/CA-Lab/from-if/1-start/arm_prj/arm_prj.srcs/sources_1/new/Val2Generate.v" Line 1. Module Val2Generate doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/USER/Documents/Lessons/CA-Lab/from-if/1-start/arm_prj/arm_prj.srcs/sources_1/new/ALU.v" Line 1. Module ALU doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/USER/Documents/Lessons/CA-Lab/from-if/1-start/arm_prj/arm_prj.srcs/sources_1/new/Adder.v" Line 1. Module Adder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/USER/Documents/Lessons/CA-Lab/from-if/1-start/arm_prj/arm_prj.srcs/sources_1/new/EXE_Stage_Reg.v" Line 2. Module EXE_Stage_Reg doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/USER/Documents/Lessons/CA-Lab/from-if/1-start/arm_prj/arm_prj.srcs/sources_1/new/ID_Stage.v" Line 1. Module ID_Stage doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/USER/Documents/Lessons/CA-Lab/from-if/1-start/arm_prj/arm_prj.srcs/sources_1/new/ControlUnit.v" Line 1. Module ControlUnit doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/USER/Documents/Lessons/CA-Lab/from-if/1-start/arm_prj/arm_prj.srcs/sources_1/new/ConditionCheck.v" Line 1. Module ConditionCheck doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/USER/Documents/Lessons/CA-Lab/from-if/1-start/arm_prj/arm_prj.srcs/sources_1/new/Mux2to1.v" Line 1. Module Mux2to1(N=9) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/USER/Documents/Lessons/CA-Lab/from-if/1-start/arm_prj/arm_prj.srcs/sources_1/new/Mux2to1.v" Line 1. Module Mux2to1(N=4) doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/USER/Documents/Lessons/CA-Lab/from-if/1-start/arm_prj/arm_prj.srcs/sources_1/new/RegisterFile.v" Line 1. Module RegisterFile doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/USER/Documents/Lessons/CA-Lab/from-if/1-start/arm_prj/arm_prj.srcs/sources_1/new/ID_Stage_Reg.v" Line 2. Module ID_Stage_Reg doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/USER/Documents/Lessons/CA-Lab/from-if/1-start/arm_prj/arm_prj.srcs/sources_1/new/IF.v" Line 1. Module IF doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/USER/Documents/Lessons/CA-Lab/from-if/1-start/arm_prj/arm_prj.srcs/sources_1/new/Mux2to1.v" Line 1. Module Mux2to1 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/USER/Documents/Lessons/CA-Lab/from-if/1-start/arm_prj/arm_prj.srcs/sources_1/new/ProgramCounter.v" Line 1. Module ProgramCounter doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/USER/Documents/Lessons/CA-Lab/from-if/1-start/arm_prj/arm_prj.srcs/sources_1/new/Adder.v" Line 1. Module Adder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/USER/Documents/Lessons/CA-Lab/from-if/1-start/arm_prj/arm_prj.srcs/sources_1/new/InstructionMemory.v" Line 1. Module InstructionMemory doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/USER/Documents/Lessons/CA-Lab/from-if/1-start/arm_prj/arm_prj.srcs/sources_1/new/MEM_Stage.v" Line 1. Module MEM_Stage doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/USER/Documents/Lessons/CA-Lab/from-if/1-start/arm_prj/arm_prj.srcs/sources_1/new/CacheController.v" Line 1. Module CacheController doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/USER/Documents/Lessons/CA-Lab/from-if/1-start/arm_prj/arm_prj.srcs/sources_1/new/SramController.v" Line 8. Module SramController doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/USER/Documents/Lessons/CA-Lab/from-if/1-start/arm_prj/arm_prj.srcs/sources_1/new/SRAM.v" Line 1. Module SRAM doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/USER/Documents/Lessons/CA-Lab/from-if/1-start/arm_prj/arm_prj.srcs/sources_1/new/MEM_Stage_Reg.v" Line 2. Module MEM_Stage_Reg doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/USER/Documents/Lessons/CA-Lab/from-if/1-start/arm_prj/arm_prj.srcs/sources_1/new/RegIFId.v" Line 1. Module RegsIfId doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/USER/Documents/Lessons/CA-Lab/from-if/1-start/arm_prj/arm_prj.srcs/sources_1/new/StatusRegister.v" Line 2. Module StatusRegister doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.Mux4to1
+Compiling module xil_defaultlib.Val2Generate
+Compiling module xil_defaultlib.ALU
+Compiling module xil_defaultlib.Adder
+Compiling module xil_defaultlib.EXE_Stage
+Compiling module xil_defaultlib.design_MEM_EXE_Stage_0_0
+Compiling module xil_defaultlib.EXE_Stage_Reg
+Compiling module xil_defaultlib.design_MEM_EXE_Stage_Reg_0_0
+Compiling module xil_defaultlib.ControlUnit
+Compiling module xil_defaultlib.ConditionCheck
+Compiling module xil_defaultlib.Mux2to1(N=9)
+Compiling module xil_defaultlib.Mux2to1(N=4)
+Compiling module xil_defaultlib.RegisterFile
+Compiling module xil_defaultlib.ID_Stage
+Compiling module xil_defaultlib.design_MEM_ID_Stage_0_0
+Compiling module xil_defaultlib.ID_Stage_Reg
+Compiling module xil_defaultlib.design_MEM_ID_Stage_Reg_0_0
+Compiling module xil_defaultlib.Mux2to1
+Compiling module xil_defaultlib.ProgramCounter
+Compiling module xil_defaultlib.InstructionMemory
+Compiling module xil_defaultlib.IF
+Compiling module xil_defaultlib.design_MEM_IF_0_0
+Compiling module xil_defaultlib.CacheController
+Compiling module xil_defaultlib.SramController
+Compiling module xil_defaultlib.SRAM
+Compiling module xil_defaultlib.MEM_Stage
+Compiling module xil_defaultlib.design_MEM_MEM_Stage_0_0
+Compiling module xil_defaultlib.MEM_Stage_Reg
+Compiling module xil_defaultlib.design_MEM_MEM_Stage_Reg_0_0
+Compiling module xil_defaultlib.RegsIfId
+Compiling module xil_defaultlib.design_MEM_RegsIfId_0_0
+Compiling module xil_defaultlib.StatusRegister
+Compiling module xil_defaultlib.design_MEM_StatusRegister_0_0
+Compiling module xlconstant_v1_1_5.xlconstant_v1_1_5_xlconstant(CON...
+Compiling module xil_defaultlib.design_MEM_xlconstant_0_0
+Compiling module xil_defaultlib.design_MEM
+Compiling module xil_defaultlib.design_MEM_wrapper
+Compiling module xil_defaultlib.tb_design_MEM_wrapper
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_design_MEM_wrapper_behav
