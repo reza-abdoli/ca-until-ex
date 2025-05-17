@@ -54,34 +54,42 @@
         "ports": {
           "clk": {
             "type": "clk",
-            "direction": "I"
+            "direction": "I",
+            "left": "0",
+            "right": "0"
           },
           "rst": {
             "type": "rst",
-            "direction": "I"
+            "direction": "I",
+            "left": "0",
+            "right": "0"
           },
-          "freeze": {
-            "direction": "I"
+          "en": {
+            "direction": "I",
+            "left": "0",
+            "right": "0"
           },
-          "flush": {
-            "direction": "I"
+          "clr": {
+            "direction": "I",
+            "left": "0",
+            "right": "0"
           },
-          "pcIn": {
+          "instrIn": {
             "direction": "I",
             "left": "31",
             "right": "0"
           },
-          "instructionIn": {
+          "PCIn": {
             "direction": "I",
             "left": "31",
             "right": "0"
           },
-          "pcOut": {
+          "instrOut": {
             "direction": "O",
             "left": "31",
             "right": "0"
           },
-          "instructionOut": {
+          "PCOut": {
             "direction": "O",
             "left": "31",
             "right": "0"
@@ -99,30 +107,38 @@
         "ports": {
           "clk": {
             "type": "clk",
-            "direction": "I"
+            "direction": "I",
+            "left": "0",
+            "right": "0"
           },
           "rst": {
             "type": "rst",
-            "direction": "I"
-          },
-          "branchTaken": {
-            "direction": "I"
+            "direction": "I",
+            "left": "0",
+            "right": "0"
           },
           "freeze": {
-            "direction": "I"
-          },
-          "branchAddress": {
             "direction": "I",
-            "left": "31",
+            "left": "0",
             "right": "0"
           },
-          "PC": {
+          "branchTakenIn": {
+            "direction": "I",
+            "left": "0",
+            "right": "0"
+          },
+          "PCOut": {
             "direction": "O",
             "left": "31",
             "right": "0"
           },
-          "instruction": {
+          "instructionOut": {
             "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "branchAddressIn": {
+            "direction": "I",
             "left": "31",
             "right": "0"
           }
@@ -146,46 +162,34 @@
       },
       "branchTaken_0_1": {
         "ports": [
-          "branchTaken_0",
-          "RegsIfId_0/flush",
-          "IF_0/branchTaken"
+          "branchTaken_0"
         ]
       },
       "freeze_0_1": {
         "ports": [
           "freeze_0",
-          "RegsIfId_0/freeze",
           "IF_0/freeze"
         ]
       },
       "branchAddress_0_1": {
         "ports": [
-          "branchAddress_0",
-          "IF_0/branchAddress"
+          "branchAddress_0"
         ]
       },
       "RegsIfId_0": {
         "ports": [
-          "RegsIfId_0/pcOut",
+          "RegsIfId_0/PCOut",
           "pcOut_0"
         ]
       },
       "RegsIfId_0_instructionOut": {
         "ports": [
-          "RegsIfId_0/instructionOut",
           "instructionOut_0"
         ]
       },
       "IF_0_PC": {
         "ports": [
-          "IF_0/PC",
-          "RegsIfId_0/pcIn"
-        ]
-      },
-      "IF_0_instruction": {
-        "ports": [
-          "IF_0/instruction",
-          "RegsIfId_0/instructionIn"
+          "RegsIfId_0/PCIn"
         ]
       }
     }

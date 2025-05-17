@@ -13,13 +13,12 @@ preplace inst RegsIfId_0 -pg 1 -lvl 2 -y 150 -defaultsOSRD
 preplace inst IF_0 -pg 1 -lvl 1 -y -60 -defaultsOSRD
 preplace netloc RegsIfId_0_instructionOut 1 2 1 N
 preplace netloc branchAddress_0_1 1 0 1 N
-preplace netloc clk_0_1 1 0 2 -320 100 N
-preplace netloc IF_0_PC 1 1 1 360
-preplace netloc IF_0_instruction 1 1 1 330
-preplace netloc rst_0_1 1 0 2 -300 90 340
-preplace netloc freeze_0_1 1 0 2 -330J 140 N
-preplace netloc RegsIfId_0 1 2 1 730
-preplace netloc branchTaken_0_1 1 0 2 -310J 40 350
+preplace netloc clk_0_1 1 0 2 -330 100 N
+preplace netloc IF_0_PC 1 1 1 N
+preplace netloc rst_0_1 1 0 2 -320 120 N
+preplace netloc freeze_0_1 1 0 1 -310J
+preplace netloc RegsIfId_0 1 2 1 690
+preplace netloc branchTaken_0_1 1 0 1 NJ
 levelinfo -pg 1 -350 170 560 760 -top -160 -bot 260
 "
 }

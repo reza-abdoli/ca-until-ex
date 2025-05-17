@@ -1,18 +1,28 @@
-module IF ( input clk , rst, branchTaken, freeze,
-            input[31:0] branchAddress,
-            output [31:0] PC, instruction);
+module IF(clk, rst, freeze, branchTakenIn, PCOut, instructionOut, branchAddressIn);
+    parameter N = 32;
 
-    wire [31:0] PCIn, PCOut;
-
-//    Mux2to1 mux (branchTaken, PC, branchAddress, PCIn);
-    Mux2to1 #(32) muxPC(  // For updating PC value to branch address if branch is taken
-        .a(PC), .b(branchAddress), .s(branchTaken), .out(PCIn)
-    ); 
+    input wire[0:0] clk, rst, freeze, branchTakenIn;
+    input wire[N - 1:0] branchAddressIn;
+    output wire [N - 1:0] PCOut, instructionOut;
     
-    ProgramCounter programCounter(PCIn , PCOut, freeze, rst, clk);
-//    assign PC = PCOut;
-//    ProgramCounter programCounter(PCOut, PC);    
-    Adder adder(32'd4, PCOut, PC);
-    InstructionMemory instructionMem(PCOut, instruction);
+    wire[N - 1:0] PCRegIn, PCRegOut, PCPlus4;
+
+    Adder #(N) adder(  // For updating PC value to PC + 4 cause instructions are 4 bytes (32 bits) long 
+        .a(32'd4), .b(PCRegOut), .out(PCPlus4)
+    );
+
+    Mux2to1 #(N) muxPC(  // For updating PC value to branch address if branch is taken
+        .a(PCPlus4), .b(branchAddressIn), .s(branchTakenIn), .out(PCRegIn)
+    ); 
+
+    RegisterPosEdge #(N) PC(  // For storing PC value
+        .in(PCRegIn), .clk(clk), .en(~freeze), .rst(rst), .out(PCRegOut)
+    ); 
+
+    InstructionMemory #(N) instructionMemory(  // For storing instructions 
+        .PC(PCRegOut), .instruction(instructionOut)
+    );
+
+    assign PCOut = PCPlus4;
 
 endmodule

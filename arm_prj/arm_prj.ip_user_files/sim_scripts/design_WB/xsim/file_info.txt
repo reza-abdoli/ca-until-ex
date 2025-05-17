@@ -1,0 +1,13 @@
+design_WB_EXE_Stage_0_0.v,verilog,xil_defaultlib,../../../bd/design_WB/ip/design_WB_EXE_Stage_0_0/sim/design_WB_EXE_Stage_0_0.v,
+design_WB_EXE_Stage_Reg_0_0.v,verilog,xil_defaultlib,../../../bd/design_WB/ip/design_WB_EXE_Stage_Reg_0_0/sim/design_WB_EXE_Stage_Reg_0_0.v,
+design_WB_ID_Stage_0_0.v,verilog,xil_defaultlib,../../../bd/design_WB/ip/design_WB_ID_Stage_0_0/sim/design_WB_ID_Stage_0_0.v,
+design_WB_ID_Stage_Reg_0_0.v,verilog,xil_defaultlib,../../../bd/design_WB/ip/design_WB_ID_Stage_Reg_0_0/sim/design_WB_ID_Stage_Reg_0_0.v,
+design_WB_IF_0_0.v,verilog,xil_defaultlib,../../../bd/design_WB/ip/design_WB_IF_0_0/sim/design_WB_IF_0_0.v,
+design_WB_MEM_Stage_0_0.v,verilog,xil_defaultlib,../../../bd/design_WB/ip/design_WB_MEM_Stage_0_0/sim/design_WB_MEM_Stage_0_0.v,
+design_WB_MEM_Stage_Reg_0_0.v,verilog,xil_defaultlib,../../../bd/design_WB/ip/design_WB_MEM_Stage_Reg_0_0/sim/design_WB_MEM_Stage_Reg_0_0.v,
+design_WB_RegsIfId_0_0.v,verilog,xil_defaultlib,../../../bd/design_WB/ip/design_WB_RegsIfId_0_0/sim/design_WB_RegsIfId_0_0.v,
+design_WB_StatusRegister_0_0.v,verilog,xil_defaultlib,../../../bd/design_WB/ip/design_WB_StatusRegister_0_0/sim/design_WB_StatusRegister_0_0.v,
+design_WB_xlconstant_0_0.v,verilog,xil_defaultlib,../../../bd/design_WB/ip/design_WB_xlconstant_0_0/sim/design_WB_xlconstant_0_0.v,
+design_WB_WB_Stage_0_0.v,verilog,xil_defaultlib,../../../bd/design_WB/ip/design_WB_WB_Stage_0_0/sim/design_WB_WB_Stage_0_0.v,
+design_WB.v,verilog,xil_defaultlib,../../../bd/design_WB/sim/design_WB.v,
+glbl.v,Verilog,xil_defaultlib,glbl.v

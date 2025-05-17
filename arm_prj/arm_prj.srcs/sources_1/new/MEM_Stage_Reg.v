@@ -33,7 +33,7 @@ module MEM_Stage_Reg(clk, rst, clr, en, WB_ENIn, WB_ENOut, MEM_R_ENIn,
             DataMemoryOut   <= 32'b0;    
         end
 
-        else if (~en) begin
+        else if (en) begin
             WB_ENOut        <= WB_ENIn;
             MEM_R_ENOut     <= MEM_R_ENIn;
             DestOut         <= DestIn;

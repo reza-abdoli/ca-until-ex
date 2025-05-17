@@ -165,11 +165,7 @@ proc create_root_design { parentCell } {
 
   # Create ports
   set ALU_ResOut_0 [ create_bd_port -dir O -from 31 -to 0 ALU_ResOut_0 ]
-  set branchAddress_0 [ create_bd_port -dir I -from 31 -to 0 branchAddress_0 ]
-  set branchTaken_0 [ create_bd_port -dir I branchTaken_0 ]
   set clk_0 [ create_bd_port -dir I -type clk clk_0 ]
-  set freeze_0 [ create_bd_port -dir I freeze_0 ]
-  set freeze_1 [ create_bd_port -dir I freeze_1 ]
   set rst_0 [ create_bd_port -dir I -type rst rst_0 ]
 
   # Create instance: EXE_Stage_0, and set properties
@@ -256,6 +252,15 @@ proc create_root_design { parentCell } {
    CONFIG.CONST_WIDTH {32} \
  ] $xlconstant_0
 
+  # Create instance: xlconstant_1, and set properties
+  set xlconstant_1 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlconstant:1.1 xlconstant_1 ]
+  set_property -dict [ list \
+   CONFIG.CONST_VAL {0} \
+ ] $xlconstant_1
+
+  # Create instance: xlconstant_2, and set properties
+  set xlconstant_2 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlconstant:1.1 xlconstant_2 ]
+
   # Create port connections
   connect_bd_net -net EXE_Stage_0_ALU_ResOut [get_bd_pins EXE_Stage_0/ALU_ResOut] [get_bd_pins EXE_Stage_Reg_0/ALU_ResIn]
   connect_bd_net -net EXE_Stage_0_statusOut [get_bd_pins EXE_Stage_0/statusOut] [get_bd_pins StatusRegister_0/statIn]
@@ -289,16 +294,15 @@ proc create_root_design { parentCell } {
   connect_bd_net -net ID_Stage_Reg_0_src1Out [get_bd_pins EXE_Stage_0/selSrc1In] [get_bd_pins ID_Stage_Reg_0/src1Out]
   connect_bd_net -net ID_Stage_Reg_0_src2Out [get_bd_pins EXE_Stage_0/selSrc2In] [get_bd_pins ID_Stage_Reg_0/src2Out]
   connect_bd_net -net ID_Stage_Reg_0_statusOut [get_bd_pins EXE_Stage_0/statusIn] [get_bd_pins ID_Stage_Reg_0/statusOut]
-  connect_bd_net -net IF_0_PC [get_bd_pins IF_0/PC] [get_bd_pins RegsIfId_0/pcIn]
-  connect_bd_net -net IF_0_instruction [get_bd_pins IF_0/instruction] [get_bd_pins RegsIfId_0/instructionIn]
-  connect_bd_net -net RegsIfId_0_instructionOut [get_bd_pins ID_Stage_0/instructionIn] [get_bd_pins RegsIfId_0/instructionOut]
-  connect_bd_net -net RegsIfId_0_pcOut [get_bd_pins ID_Stage_Reg_0/PCIn] [get_bd_pins RegsIfId_0/pcOut]
-  connect_bd_net -net branchAddress_0_1 [get_bd_ports branchAddress_0] [get_bd_pins IF_0/branchAddress]
-  connect_bd_net -net branchTaken_0_1 [get_bd_ports branchTaken_0] [get_bd_pins EXE_Stage_Reg_0/clr] [get_bd_pins ID_Stage_Reg_0/clr] [get_bd_pins IF_0/branchTaken] [get_bd_pins RegsIfId_0/flush]
+  connect_bd_net -net IF_0_PC [get_bd_pins IF_0/PCOut] [get_bd_pins RegsIfId_0/PCIn]
+  connect_bd_net -net IF_0_instructionOut [get_bd_pins IF_0/instructionOut] [get_bd_pins RegsIfId_0/instrIn]
+  connect_bd_net -net RegsIfId_0_instructionOut [get_bd_pins ID_Stage_0/instructionIn] [get_bd_pins RegsIfId_0/instrOut]
+  connect_bd_net -net RegsIfId_0_pcOut [get_bd_pins ID_Stage_Reg_0/PCIn] [get_bd_pins RegsIfId_0/PCOut]
   connect_bd_net -net clk_0_1 [get_bd_ports clk_0] [get_bd_pins EXE_Stage_0/clk] [get_bd_pins EXE_Stage_Reg_0/clk] [get_bd_pins ID_Stage_0/clk] [get_bd_pins ID_Stage_Reg_0/clk] [get_bd_pins IF_0/clk] [get_bd_pins RegsIfId_0/clk] [get_bd_pins StatusRegister_0/clk]
-  connect_bd_net -net freeze_1_1 [get_bd_ports freeze_1] [get_bd_pins EXE_Stage_Reg_0/en] [get_bd_pins ID_Stage_Reg_0/en] [get_bd_pins IF_0/freeze] [get_bd_pins RegsIfId_0/freeze]
+  connect_bd_net -net freeze_1_1 [get_bd_pins IF_0/branchAddressIn] [get_bd_pins IF_0/branchTakenIn] [get_bd_pins IF_0/freeze] [get_bd_pins xlconstant_1/dout]
   connect_bd_net -net rst_0_1 [get_bd_ports rst_0] [get_bd_pins EXE_Stage_0/rst] [get_bd_pins EXE_Stage_Reg_0/rst] [get_bd_pins ID_Stage_0/rst] [get_bd_pins ID_Stage_Reg_0/rst] [get_bd_pins IF_0/rst] [get_bd_pins RegsIfId_0/rst] [get_bd_pins StatusRegister_0/rst]
-  connect_bd_net -net xlconstant_0_dout [get_bd_pins EXE_Stage_0/ALU_ResIn] [get_bd_pins EXE_Stage_0/WB_ValueIn] [get_bd_pins EXE_Stage_Reg_0/Val_RmIn] [get_bd_pins ID_Stage_0/HazardIn] [get_bd_pins ID_Stage_0/WB_DestIn] [get_bd_pins ID_Stage_0/WB_ENIn] [get_bd_pins ID_Stage_0/WB_ValueIn] [get_bd_pins ID_Stage_0/statusIn] [get_bd_pins ID_Stage_Reg_0/statusIn] [get_bd_pins xlconstant_0/dout]
+  connect_bd_net -net xlconstant_0_dout [get_bd_pins EXE_Stage_0/ALU_ResIn] [get_bd_pins EXE_Stage_0/WB_ValueIn] [get_bd_pins EXE_Stage_Reg_0/Val_RmIn] [get_bd_pins EXE_Stage_Reg_0/clr] [get_bd_pins ID_Stage_0/HazardIn] [get_bd_pins ID_Stage_0/WB_DestIn] [get_bd_pins ID_Stage_0/WB_ENIn] [get_bd_pins ID_Stage_0/WB_ValueIn] [get_bd_pins ID_Stage_0/statusIn] [get_bd_pins ID_Stage_Reg_0/clr] [get_bd_pins ID_Stage_Reg_0/statusIn] [get_bd_pins RegsIfId_0/clr] [get_bd_pins xlconstant_0/dout]
+  connect_bd_net -net xlconstant_2_dout [get_bd_pins EXE_Stage_Reg_0/en] [get_bd_pins ID_Stage_Reg_0/en] [get_bd_pins RegsIfId_0/en] [get_bd_pins xlconstant_2/dout]
 
   # Create address segments
 

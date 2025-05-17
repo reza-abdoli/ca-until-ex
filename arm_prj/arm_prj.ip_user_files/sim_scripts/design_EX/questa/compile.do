@@ -22,6 +22,8 @@ vlog -work xlconstant_v1_1_5 -64 \
 vlog -work xil_defaultlib -64 \
 "../../../bd/design_EX/ip/design_EX_xlconstant_0_0/sim/design_EX_xlconstant_0_0.v" \
 "../../../bd/design_EX/sim/design_EX.v" \
+"../../../bd/design_EX/ip/design_EX_xlconstant_1_0/sim/design_EX_xlconstant_1_0.v" \
+"../../../bd/design_EX/ip/design_EX_xlconstant_2_0/sim/design_EX_xlconstant_2_0.v" \
 
 vlog -work xil_defaultlib \
 "glbl.v"

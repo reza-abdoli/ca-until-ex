@@ -40,7 +40,7 @@ if { [string first $scripts_vivado_version $current_vivado_version] == -1 } {
 
 # The design that will be created by this Tcl script contains the following 
 # module references:
-# EXE_Stage, EXE_Stage_Reg, ID_Stage, ID_Stage_Reg, IF, MEM_Stage, MEM_Stage_Reg, RegsIfId, StatusRegister
+# EXE_Stage, EXE_Stage_Reg, ID_Stage, ID_Stage_Reg, IF, MEM_Stage, RegsIfId, StatusRegister
 
 # Please add the sources of those modules before sourcing this Tcl script.
 
@@ -165,19 +165,7 @@ proc create_root_design { parentCell } {
 
   # Create ports
   set DataMemoryOut_0 [ create_bd_port -dir O -from 31 -to 0 DataMemoryOut_0 ]
-  set MEM_ReadyOut_0 [ create_bd_port -dir O -from 0 -to 0 MEM_ReadyOut_0 ]
-  set SRAM_ADDROut_0 [ create_bd_port -dir O -from 17 -to 0 SRAM_ADDROut_0 ]
-  set SRAM_CE_NOut_0 [ create_bd_port -dir O -from 17 -to 0 SRAM_CE_NOut_0 ]
-  set SRAM_DQInOut_0 [ create_bd_port -dir IO -from 15 -to 0 SRAM_DQInOut_0 ]
-  set SRAM_LB_NOut_0 [ create_bd_port -dir O -from 17 -to 0 SRAM_LB_NOut_0 ]
-  set SRAM_OE_NOut_0 [ create_bd_port -dir O -from 17 -to 0 SRAM_OE_NOut_0 ]
-  set SRAM_UB_NOut_0 [ create_bd_port -dir O -from 17 -to 0 SRAM_UB_NOut_0 ]
-  set SRAM_WE_NOut_0 [ create_bd_port -dir O -from 17 -to 0 SRAM_WE_NOut_0 ]
-  set branchAddress_0 [ create_bd_port -dir I -from 31 -to 0 branchAddress_0 ]
-  set branchTaken_0 [ create_bd_port -dir I branchTaken_0 ]
   set clk_0 [ create_bd_port -dir I -type clk clk_0 ]
-  set freeze_0 [ create_bd_port -dir I freeze_0 ]
-  set freeze_1 [ create_bd_port -dir I freeze_1 ]
   set rst_0 [ create_bd_port -dir I -type rst rst_0 ]
 
   # Create instance: EXE_Stage_0, and set properties
@@ -246,17 +234,6 @@ proc create_root_design { parentCell } {
      return 1
    }
   
-  # Create instance: MEM_Stage_Reg_0, and set properties
-  set block_name MEM_Stage_Reg
-  set block_cell_name MEM_Stage_Reg_0
-  if { [catch {set MEM_Stage_Reg_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
-     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
-     return 1
-   } elseif { $MEM_Stage_Reg_0 eq "" } {
-     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
-     return 1
-   }
-  
   # Create instance: RegsIfId_0, and set properties
   set block_name RegsIfId
   set block_cell_name RegsIfId_0
@@ -286,15 +263,22 @@ proc create_root_design { parentCell } {
    CONFIG.CONST_WIDTH {32} \
  ] $xlconstant_0
 
+  # Create instance: xlconstant_1, and set properties
+  set xlconstant_1 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlconstant:1.1 xlconstant_1 ]
+  set_property -dict [ list \
+   CONFIG.CONST_VAL {0} \
+ ] $xlconstant_1
+
+  # Create instance: xlconstant_2, and set properties
+  set xlconstant_2 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlconstant:1.1 xlconstant_2 ]
+
   # Create port connections
   connect_bd_net -net EXE_Stage_0_ALU_ResOut [get_bd_pins EXE_Stage_0/ALU_ResOut] [get_bd_pins EXE_Stage_Reg_0/ALU_ResIn]
   connect_bd_net -net EXE_Stage_0_statusOut [get_bd_pins EXE_Stage_0/statusOut] [get_bd_pins StatusRegister_0/statIn]
-  connect_bd_net -net EXE_Stage_Reg_0_ALU_ResOut [get_bd_pins EXE_Stage_Reg_0/ALU_ResOut] [get_bd_pins MEM_Stage_0/ALU_ResIn] [get_bd_pins MEM_Stage_Reg_0/ALU_ResIn]
-  connect_bd_net -net EXE_Stage_Reg_0_DestOut [get_bd_pins EXE_Stage_Reg_0/DestOut] [get_bd_pins MEM_Stage_Reg_0/DestIn]
-  connect_bd_net -net EXE_Stage_Reg_0_MEM_R_ENOut [get_bd_pins EXE_Stage_Reg_0/MEM_R_ENOut] [get_bd_pins MEM_Stage_0/MEM_R_ENIn] [get_bd_pins MEM_Stage_Reg_0/MEM_R_ENIn]
+  connect_bd_net -net EXE_Stage_Reg_0_ALU_ResOut [get_bd_pins EXE_Stage_Reg_0/ALU_ResOut] [get_bd_pins MEM_Stage_0/ALU_ResIn]
+  connect_bd_net -net EXE_Stage_Reg_0_MEM_R_ENOut [get_bd_pins EXE_Stage_Reg_0/MEM_R_ENOut] [get_bd_pins MEM_Stage_0/MEM_R_ENIn]
   connect_bd_net -net EXE_Stage_Reg_0_MEM_W_ENOut [get_bd_pins EXE_Stage_Reg_0/MEM_W_ENOut] [get_bd_pins MEM_Stage_0/MEM_W_ENIn]
   connect_bd_net -net EXE_Stage_Reg_0_Val_RmOut [get_bd_pins EXE_Stage_Reg_0/Val_RmOut] [get_bd_pins MEM_Stage_0/Value_RmIn]
-  connect_bd_net -net EXE_Stage_Reg_0_WB_ENOut [get_bd_pins EXE_Stage_Reg_0/WB_ENOut] [get_bd_pins MEM_Stage_Reg_0/WB_ENIn]
   connect_bd_net -net ID_Stage_0_BOut [get_bd_pins ID_Stage_0/BOut] [get_bd_pins ID_Stage_Reg_0/BIn]
   connect_bd_net -net ID_Stage_0_DestOut [get_bd_pins ID_Stage_0/DestOut] [get_bd_pins ID_Stage_Reg_0/DestIn]
   connect_bd_net -net ID_Stage_0_EXE_CMDOut [get_bd_pins ID_Stage_0/EXE_CMDOut] [get_bd_pins ID_Stage_Reg_0/EXE_CMDIn]
@@ -324,26 +308,16 @@ proc create_root_design { parentCell } {
   connect_bd_net -net ID_Stage_Reg_0_src1Out [get_bd_pins EXE_Stage_0/selSrc1In] [get_bd_pins ID_Stage_Reg_0/src1Out]
   connect_bd_net -net ID_Stage_Reg_0_src2Out [get_bd_pins EXE_Stage_0/selSrc2In] [get_bd_pins ID_Stage_Reg_0/src2Out]
   connect_bd_net -net ID_Stage_Reg_0_statusOut [get_bd_pins EXE_Stage_0/statusIn] [get_bd_pins ID_Stage_Reg_0/statusOut]
-  connect_bd_net -net IF_0_PC [get_bd_pins IF_0/PC] [get_bd_pins RegsIfId_0/pcIn]
-  connect_bd_net -net IF_0_instruction [get_bd_pins IF_0/instruction] [get_bd_pins RegsIfId_0/instructionIn]
-  connect_bd_net -net MEM_Stage_0_DataMemoryOut [get_bd_pins MEM_Stage_0/DataMemoryOut] [get_bd_pins MEM_Stage_Reg_0/DataMemoryIn]
-  connect_bd_net -net MEM_Stage_0_MEM_ReadyOut [get_bd_ports MEM_ReadyOut_0] [get_bd_pins MEM_Stage_0/MEM_ReadyOut]
-  connect_bd_net -net MEM_Stage_0_SRAM_ADDROut [get_bd_ports SRAM_ADDROut_0] [get_bd_pins MEM_Stage_0/SRAM_ADDROut]
-  connect_bd_net -net MEM_Stage_0_SRAM_CE_NOut [get_bd_ports SRAM_CE_NOut_0] [get_bd_pins MEM_Stage_0/SRAM_CE_NOut]
-  connect_bd_net -net MEM_Stage_0_SRAM_LB_NOut [get_bd_ports SRAM_LB_NOut_0] [get_bd_pins MEM_Stage_0/SRAM_LB_NOut]
-  connect_bd_net -net MEM_Stage_0_SRAM_OE_NOut [get_bd_ports SRAM_OE_NOut_0] [get_bd_pins MEM_Stage_0/SRAM_OE_NOut]
-  connect_bd_net -net MEM_Stage_0_SRAM_UB_NOut [get_bd_ports SRAM_UB_NOut_0] [get_bd_pins MEM_Stage_0/SRAM_UB_NOut]
-  connect_bd_net -net MEM_Stage_0_SRAM_WE_NOut [get_bd_ports SRAM_WE_NOut_0] [get_bd_pins MEM_Stage_0/SRAM_WE_NOut]
-  connect_bd_net -net MEM_Stage_Reg_0_DataMemoryOut [get_bd_ports DataMemoryOut_0] [get_bd_pins MEM_Stage_Reg_0/DataMemoryOut]
-  connect_bd_net -net Net [get_bd_ports SRAM_DQInOut_0] [get_bd_pins MEM_Stage_0/SRAM_DQInOut]
-  connect_bd_net -net RegsIfId_0_instructionOut [get_bd_pins ID_Stage_0/instructionIn] [get_bd_pins RegsIfId_0/instructionOut]
-  connect_bd_net -net RegsIfId_0_pcOut [get_bd_pins ID_Stage_Reg_0/PCIn] [get_bd_pins RegsIfId_0/pcOut]
-  connect_bd_net -net branchAddress_0_1 [get_bd_ports branchAddress_0] [get_bd_pins IF_0/branchAddress]
-  connect_bd_net -net branchTaken_0_1 [get_bd_ports branchTaken_0] [get_bd_pins EXE_Stage_Reg_0/clr] [get_bd_pins ID_Stage_Reg_0/clr] [get_bd_pins IF_0/branchTaken] [get_bd_pins MEM_Stage_Reg_0/clr] [get_bd_pins RegsIfId_0/flush]
-  connect_bd_net -net clk_0_1 [get_bd_ports clk_0] [get_bd_pins EXE_Stage_0/clk] [get_bd_pins EXE_Stage_Reg_0/clk] [get_bd_pins ID_Stage_0/clk] [get_bd_pins ID_Stage_Reg_0/clk] [get_bd_pins IF_0/clk] [get_bd_pins MEM_Stage_0/clk] [get_bd_pins MEM_Stage_Reg_0/clk] [get_bd_pins RegsIfId_0/clk] [get_bd_pins StatusRegister_0/clk]
-  connect_bd_net -net freeze_1_1 [get_bd_ports freeze_1] [get_bd_pins EXE_Stage_Reg_0/en] [get_bd_pins ID_Stage_Reg_0/en] [get_bd_pins IF_0/freeze] [get_bd_pins MEM_Stage_Reg_0/en] [get_bd_pins RegsIfId_0/freeze]
-  connect_bd_net -net rst_0_1 [get_bd_ports rst_0] [get_bd_pins EXE_Stage_0/rst] [get_bd_pins EXE_Stage_Reg_0/rst] [get_bd_pins ID_Stage_0/rst] [get_bd_pins ID_Stage_Reg_0/rst] [get_bd_pins IF_0/rst] [get_bd_pins MEM_Stage_0/rst] [get_bd_pins MEM_Stage_Reg_0/rst] [get_bd_pins RegsIfId_0/rst] [get_bd_pins StatusRegister_0/rst]
-  connect_bd_net -net xlconstant_0_dout [get_bd_pins EXE_Stage_0/ALU_ResIn] [get_bd_pins EXE_Stage_0/WB_ValueIn] [get_bd_pins EXE_Stage_Reg_0/Val_RmIn] [get_bd_pins ID_Stage_0/HazardIn] [get_bd_pins ID_Stage_0/WB_DestIn] [get_bd_pins ID_Stage_0/WB_ENIn] [get_bd_pins ID_Stage_0/WB_ValueIn] [get_bd_pins ID_Stage_0/statusIn] [get_bd_pins ID_Stage_Reg_0/statusIn] [get_bd_pins xlconstant_0/dout]
+  connect_bd_net -net IF_0_PC [get_bd_pins IF_0/PCOut] [get_bd_pins RegsIfId_0/PCIn]
+  connect_bd_net -net IF_0_instructionOut [get_bd_pins IF_0/instructionOut] [get_bd_pins RegsIfId_0/instrIn]
+  connect_bd_net -net MEM_Stage_0_DataMemoryOut [get_bd_ports DataMemoryOut_0] [get_bd_pins MEM_Stage_0/DataMemoryOut]
+  connect_bd_net -net RegsIfId_0_instructionOut [get_bd_pins ID_Stage_0/instructionIn] [get_bd_pins RegsIfId_0/instrOut]
+  connect_bd_net -net RegsIfId_0_pcOut [get_bd_pins ID_Stage_Reg_0/PCIn] [get_bd_pins RegsIfId_0/PCOut]
+  connect_bd_net -net clk_0_1 [get_bd_ports clk_0] [get_bd_pins EXE_Stage_0/clk] [get_bd_pins EXE_Stage_Reg_0/clk] [get_bd_pins ID_Stage_0/clk] [get_bd_pins ID_Stage_Reg_0/clk] [get_bd_pins IF_0/clk] [get_bd_pins MEM_Stage_0/clk] [get_bd_pins RegsIfId_0/clk] [get_bd_pins StatusRegister_0/clk]
+  connect_bd_net -net freeze_1_1 [get_bd_pins IF_0/branchAddressIn] [get_bd_pins IF_0/branchTakenIn] [get_bd_pins IF_0/freeze] [get_bd_pins xlconstant_1/dout]
+  connect_bd_net -net rst_0_1 [get_bd_ports rst_0] [get_bd_pins EXE_Stage_0/rst] [get_bd_pins EXE_Stage_Reg_0/rst] [get_bd_pins ID_Stage_0/rst] [get_bd_pins ID_Stage_Reg_0/rst] [get_bd_pins IF_0/rst] [get_bd_pins MEM_Stage_0/rst] [get_bd_pins RegsIfId_0/rst] [get_bd_pins StatusRegister_0/rst]
+  connect_bd_net -net xlconstant_0_dout [get_bd_pins EXE_Stage_0/ALU_ResIn] [get_bd_pins EXE_Stage_0/WB_ValueIn] [get_bd_pins EXE_Stage_Reg_0/Val_RmIn] [get_bd_pins EXE_Stage_Reg_0/clr] [get_bd_pins ID_Stage_0/HazardIn] [get_bd_pins ID_Stage_0/WB_DestIn] [get_bd_pins ID_Stage_0/WB_ENIn] [get_bd_pins ID_Stage_0/WB_ValueIn] [get_bd_pins ID_Stage_0/statusIn] [get_bd_pins ID_Stage_Reg_0/clr] [get_bd_pins ID_Stage_Reg_0/statusIn] [get_bd_pins RegsIfId_0/clr] [get_bd_pins xlconstant_0/dout]
+  connect_bd_net -net xlconstant_2_dout [get_bd_pins EXE_Stage_Reg_0/en] [get_bd_pins ID_Stage_Reg_0/en] [get_bd_pins RegsIfId_0/en] [get_bd_pins xlconstant_2/dout]
 
   # Create address segments
 

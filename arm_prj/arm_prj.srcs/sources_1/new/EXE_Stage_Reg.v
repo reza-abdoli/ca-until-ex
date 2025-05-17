@@ -34,7 +34,7 @@ module EXE_Stage_Reg(clk, rst, en, clr, WB_ENIn, WB_ENOut,
             ALU_ResOut      <= 32'b0;
         end
 
-        else if (~en) begin
+        else if (en) begin
             WB_ENOut        <= WB_ENIn;
             MEM_R_ENOut     <= MEM_R_ENIn;
             MEM_W_ENOut     <= MEM_W_ENIn;

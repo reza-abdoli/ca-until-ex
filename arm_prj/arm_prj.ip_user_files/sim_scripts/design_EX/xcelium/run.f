@@ -13,6 +13,8 @@
 -makelib xcelium_lib/xil_defaultlib \
   "../../../bd/design_EX/ip/design_EX_xlconstant_0_0/sim/design_EX_xlconstant_0_0.v" \
   "../../../bd/design_EX/sim/design_EX.v" \
+  "../../../bd/design_EX/ip/design_EX_xlconstant_1_0/sim/design_EX_xlconstant_1_0.v" \
+  "../../../bd/design_EX/ip/design_EX_xlconstant_2_0/sim/design_EX_xlconstant_2_0.v" \
 -endlib
 -makelib xcelium_lib/xil_defaultlib \
   glbl.v

@@ -2,10 +2,10 @@
 <Root MajorVersion="0" MinorVersion="36">
   <CompositeFile CompositeFileTopName="design_EX" CanBeSetAsTop="false" CanDisplayChildGraph="true">
     <Description>Composite Fileset</Description>
-    <Generation Name="SYNTHESIS" State="STALE" Timestamp="1747427313"/>
-    <Generation Name="IMPLEMENTATION" State="STALE" Timestamp="1747427313"/>
-    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1747427313"/>
-    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1747427313"/>
+    <Generation Name="SYNTHESIS" State="STALE" Timestamp="1747469570"/>
+    <Generation Name="IMPLEMENTATION" State="STALE" Timestamp="1747469570"/>
+    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1747469570"/>
+    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1747469570"/>
     <FileCollection Name="SOURCES" Type="SOURCES">
       <File Name="ip\design_EX_ID_Stage_0_0\design_EX_ID_Stage_0_0.xci" Type="IP">
         <Instance HierarchyPath="ID_Stage_0"/>
@@ -80,6 +80,22 @@
       <File Name="sim\design_EX.v" Type="Verilog">
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
         <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\design_EX_xlconstant_1_0\design_EX_xlconstant_1_0.xci" Type="IP">
+        <Instance HierarchyPath="xlconstant_1"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\design_EX_xlconstant_2_0\design_EX_xlconstant_2_0.xci" Type="IP">
+        <Instance HierarchyPath="xlconstant_2"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="SIMULATION"/>
       </File>
       <File Name="design_EX_ooc.xdc" Type="XDC">

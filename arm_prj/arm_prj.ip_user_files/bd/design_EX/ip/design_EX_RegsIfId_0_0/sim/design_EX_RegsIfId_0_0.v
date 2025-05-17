@@ -57,35 +57,35 @@
 module design_EX_RegsIfId_0_0 (
   clk,
   rst,
-  freeze,
-  flush,
-  pcIn,
-  instructionIn,
-  pcOut,
-  instructionOut
+  en,
+  clr,
+  instrIn,
+  PCIn,
+  instrOut,
+  PCOut
 );
 
 (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME clk, ASSOCIATED_RESET rst, FREQ_HZ 100000000, PHASE 0.000, CLK_DOMAIN design_EX_clk_0, INSERT_VIP 0" *)
 (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 clk CLK" *)
-input wire clk;
+input wire [0 : 0] clk;
 (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME rst, POLARITY ACTIVE_LOW, INSERT_VIP 0" *)
 (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 rst RST" *)
-input wire rst;
-input wire freeze;
-input wire flush;
-input wire [31 : 0] pcIn;
-input wire [31 : 0] instructionIn;
-output wire [31 : 0] pcOut;
-output wire [31 : 0] instructionOut;
+input wire [0 : 0] rst;
+input wire [0 : 0] en;
+input wire [0 : 0] clr;
+input wire [31 : 0] instrIn;
+input wire [31 : 0] PCIn;
+output wire [31 : 0] instrOut;
+output wire [31 : 0] PCOut;
 
   RegsIfId inst (
     .clk(clk),
     .rst(rst),
-    .freeze(freeze),
-    .flush(flush),
-    .pcIn(pcIn),
-    .instructionIn(instructionIn),
-    .pcOut(pcOut),
-    .instructionOut(instructionOut)
+    .en(en),
+    .clr(clr),
+    .instrIn(instrIn),
+    .PCIn(PCIn),
+    .instrOut(instrOut),
+    .PCOut(PCOut)
   );
 endmodule

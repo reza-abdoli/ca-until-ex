@@ -7,4 +7,6 @@ design_EX_EXE_Stage_Reg_0_0.v,verilog,xil_defaultlib,../../../bd/design_EX/ip/de
 design_EX_StatusRegister_0_0.v,verilog,xil_defaultlib,../../../bd/design_EX/ip/design_EX_StatusRegister_0_0/sim/design_EX_StatusRegister_0_0.v,
 design_EX_xlconstant_0_0.v,verilog,xil_defaultlib,../../../bd/design_EX/ip/design_EX_xlconstant_0_0/sim/design_EX_xlconstant_0_0.v,
 design_EX.v,verilog,xil_defaultlib,../../../bd/design_EX/sim/design_EX.v,
+design_EX_xlconstant_1_0.v,verilog,xil_defaultlib,../../../bd/design_EX/ip/design_EX_xlconstant_1_0/sim/design_EX_xlconstant_1_0.v,
+design_EX_xlconstant_2_0.v,verilog,xil_defaultlib,../../../bd/design_EX/ip/design_EX_xlconstant_2_0/sim/design_EX_xlconstant_2_0.v,
 glbl.v,Verilog,xil_defaultlib,glbl.v

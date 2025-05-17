@@ -1,21 +1,27 @@
-module RegsIfId(
-    input clk, rst,
-    input freeze, flush,
-    input [31:0] pcIn, instructionIn,
-    output reg [31:0] pcOut, instructionOut
-);
+module RegsIfId(clk, rst, en, clr, instrIn, PCIn, instrOut, PCOut);
+    
+    input wire[0:0] clk, rst, en, clr;
+    
+    input wire [31:0] instrIn, PCIn;
+    output reg [31:0] instrOut, PCOut;
+    
+    always @(posedge clk or posedge rst) begin
+        
+        if (rst) begin
+            instrOut   <= 32'b0;
+            PCOut      <= 32'b0;
+        end 
+        
+        else if (clr) begin
+			instrOut   <= 32'b0;
+            PCOut      <= 32'b0;
+        end
 
-always @(posedge clk or posedge rst) begin
-    if (rst) begin
-        pcOut <= 32'b0;
-        instructionOut <= 32'b0;
-    end else if (flush) begin
-        pcOut <= 32'b0;
-        instructionOut <= 32'b0;
-    end else if (!freeze) begin
-        pcOut <= pcIn;
-        instructionOut <= instructionIn;
+        else if (en) begin
+            instrOut   <= instrIn;
+            PCOut      <= PCIn;
+        end
+        
     end
-end
 
 endmodule

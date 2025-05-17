@@ -1,0 +1,29 @@
+{
+   "ExpandedHierarchyInLayout":"",
+   "guistr":"# # String gsaved with Nlview 6.8.11  2018-08-07 bk=1.4403 VDI=40 GEI=35 GUI=JA:9.0 non-TLS
+#  -string -flagsOSRD
+preplace port rst_0 -pg 1 -y 60 -defaultsOSRD
+preplace port clk_0 -pg 1 -y 20 -defaultsOSRD
+preplace port forwardENIn_0 -pg 1 -y 90 -defaultsOSRD
+preplace portBus MEM_SRAM_WE_N_0 -pg 1 -y 80 -defaultsOSRD
+preplace portBus MEM_SRAM_OE_N_0 -pg 1 -y 130 -defaultsOSRD
+preplace portBus MEM_SRAM_UB_N_0 -pg 1 -y 20 -defaultsOSRD
+preplace portBus MEM_SRAM_LB_N_0 -pg 1 -y 50 -defaultsOSRD
+preplace portBus MEM_SRAM_DQ_0 -pg 1 -y -50 -defaultsOSRD
+preplace portBus MEM_SRAM_CE_N_0 -pg 1 -y 160 -defaultsOSRD
+preplace portBus MEM_SRAM_ADDR_0 -pg 1 -y -20 -defaultsOSRD
+preplace inst ARM_0 -pg 1 -lvl 1 -y 60 -defaultsOSRD
+preplace netloc ARM_0_MEM_SRAM_LB_N 1 1 1 330J
+preplace netloc forwardENIn_0_1 1 0 1 -20J
+preplace netloc clk_0_1 1 0 1 -20J
+preplace netloc ARM_0_MEM_SRAM_WE_N 1 1 1 NJ
+preplace netloc ARM_0_MEM_SRAM_ADDR 1 1 1 330J
+preplace netloc rst_0_1 1 0 1 NJ
+preplace netloc ARM_0_MEM_SRAM_OE_N 1 1 1 320J
+preplace netloc ARM_0_MEM_SRAM_UB_N 1 1 1 340J
+preplace netloc Net 1 1 1 320J
+preplace netloc ARM_0_MEM_SRAM_CE_N 1 1 1 340J
+levelinfo -pg 1 -40 150 380 -top -80 -bot 240
+"
+}
+

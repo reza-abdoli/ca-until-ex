@@ -57,32 +57,34 @@
 module design_EX_IF_0_0 (
   clk,
   rst,
-  branchTaken,
   freeze,
-  branchAddress,
-  PC,
-  instruction
+  branchTakenIn,
+  PCOut,
+  instructionOut,
+  branchAddressIn
 );
 
 (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME clk, ASSOCIATED_RESET rst, FREQ_HZ 100000000, PHASE 0.000, CLK_DOMAIN design_EX_clk_0, INSERT_VIP 0" *)
 (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 clk CLK" *)
-input wire clk;
+input wire [0 : 0] clk;
 (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME rst, POLARITY ACTIVE_LOW, INSERT_VIP 0" *)
 (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 rst RST" *)
-input wire rst;
-input wire branchTaken;
-input wire freeze;
-input wire [31 : 0] branchAddress;
-output wire [31 : 0] PC;
-output wire [31 : 0] instruction;
+input wire [0 : 0] rst;
+input wire [0 : 0] freeze;
+input wire [0 : 0] branchTakenIn;
+output wire [31 : 0] PCOut;
+output wire [31 : 0] instructionOut;
+input wire [31 : 0] branchAddressIn;
 
-  IF inst (
+  IF #(
+    .N(32)
+  ) inst (
     .clk(clk),
     .rst(rst),
-    .branchTaken(branchTaken),
     .freeze(freeze),
-    .branchAddress(branchAddress),
-    .PC(PC),
-    .instruction(instruction)
+    .branchTakenIn(branchTakenIn),
+    .PCOut(PCOut),
+    .instructionOut(instructionOut),
+    .branchAddressIn(branchAddressIn)
   );
 endmodule

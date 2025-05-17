@@ -8,10 +8,10 @@
       "tool_version": "2018.3"
     },
     "design_tree": {
-      "IF_0": "",
+      "RegsIfId_0": "",
       "ID_Stage_0": "",
       "ID_Stage_Reg_0": "",
-      "RegsIfId_0": ""
+      "IF_0": ""
     },
     "ports": {
       "branchAddress_0": {
@@ -35,40 +35,53 @@
       }
     },
     "components": {
-      "IF_0": {
-        "vlnv": "xilinx.com:module_ref:IF:1.0",
-        "xci_name": "design_ID_IF_0_0",
+      "RegsIfId_0": {
+        "vlnv": "xilinx.com:module_ref:RegsIfId:1.0",
+        "xci_name": "design_ID_RegsIfId_0_0",
         "reference_info": {
           "ref_type": "hdl",
-          "ref_name": "IF",
+          "ref_name": "RegsIfId",
           "boundary_crc": "0x0"
         },
         "ports": {
           "clk": {
             "type": "clk",
-            "direction": "I"
+            "direction": "I",
+            "left": "0",
+            "right": "0"
           },
           "rst": {
             "type": "rst",
-            "direction": "I"
+            "direction": "I",
+            "left": "0",
+            "right": "0"
           },
-          "branchTaken": {
-            "direction": "I"
+          "en": {
+            "direction": "I",
+            "left": "0",
+            "right": "0"
           },
-          "freeze": {
-            "direction": "I"
+          "clr": {
+            "direction": "I",
+            "left": "0",
+            "right": "0"
           },
-          "branchAddress": {
+          "instrIn": {
             "direction": "I",
             "left": "31",
             "right": "0"
           },
-          "PC": {
+          "PCIn": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "instrOut": {
             "direction": "O",
             "left": "31",
             "right": "0"
           },
-          "instruction": {
+          "PCOut": {
             "direction": "O",
             "left": "31",
             "right": "0"
@@ -396,46 +409,49 @@
           }
         }
       },
-      "RegsIfId_0": {
-        "vlnv": "xilinx.com:module_ref:RegsIfId:1.0",
-        "xci_name": "design_ID_RegsIfId_0_0",
+      "IF_0": {
+        "vlnv": "xilinx.com:module_ref:IF:1.0",
+        "xci_name": "design_ID_IF_0_0",
         "reference_info": {
           "ref_type": "hdl",
-          "ref_name": "RegsIfId",
+          "ref_name": "IF",
           "boundary_crc": "0x0"
         },
         "ports": {
           "clk": {
             "type": "clk",
-            "direction": "I"
+            "direction": "I",
+            "left": "0",
+            "right": "0"
           },
           "rst": {
             "type": "rst",
-            "direction": "I"
+            "direction": "I",
+            "left": "0",
+            "right": "0"
           },
           "freeze": {
-            "direction": "I"
-          },
-          "flush": {
-            "direction": "I"
-          },
-          "pcIn": {
             "direction": "I",
-            "left": "31",
+            "left": "0",
             "right": "0"
           },
-          "instructionIn": {
+          "branchTakenIn": {
             "direction": "I",
-            "left": "31",
+            "left": "0",
             "right": "0"
           },
-          "pcOut": {
+          "PCOut": {
             "direction": "O",
             "left": "31",
             "right": "0"
           },
           "instructionOut": {
             "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "branchAddressIn": {
+            "direction": "I",
             "left": "31",
             "right": "0"
           }
@@ -445,42 +461,38 @@
     "nets": {
       "branchAddress_0_1": {
         "ports": [
-          "branchAddress_0",
-          "IF_0/branchAddress"
+          "branchAddress_0"
         ]
       },
       "branchTaken_0_1": {
         "ports": [
           "branchTaken_0",
-          "IF_0/branchTaken",
-          "ID_Stage_Reg_0/clr",
-          "RegsIfId_0/flush"
+          "ID_Stage_Reg_0/clr"
         ]
       },
       "clk_0_1": {
         "ports": [
           "clk_0",
-          "IF_0/clk",
+          "RegsIfId_0/clk",
           "ID_Stage_0/clk",
           "ID_Stage_Reg_0/clk",
-          "RegsIfId_0/clk"
+          "IF_0/clk"
         ]
       },
       "freeze_0_1": {
         "ports": [
           "freeze_0",
-          "IF_0/freeze",
           "ID_Stage_Reg_0/en",
-          "RegsIfId_0/freeze"
+          "IF_0/freeze"
         ]
       },
       "rst_0_1": {
         "ports": [
           "rst_0",
-          "IF_0/rst",
+          "RegsIfId_0/rst",
           "ID_Stage_0/rst",
           "ID_Stage_Reg_0/rst",
-          "RegsIfId_0/rst"
+          "IF_0/rst"
         ]
       },
       "ID_Stage_0_MEM_R_ENOut": {
@@ -569,26 +581,18 @@
       },
       "RegsIfId_0_instructionOut": {
         "ports": [
-          "RegsIfId_0/instructionOut",
           "ID_Stage_0/instructionIn"
         ]
       },
       "RegsIfId_0_pcOut": {
         "ports": [
-          "RegsIfId_0/pcOut",
+          "RegsIfId_0/PCOut",
           "ID_Stage_Reg_0/PCIn"
-        ]
-      },
-      "IF_0_instruction": {
-        "ports": [
-          "IF_0/instruction",
-          "RegsIfId_0/instructionIn"
         ]
       },
       "IF_0_PC": {
         "ports": [
-          "IF_0/PC",
-          "RegsIfId_0/pcIn"
+          "RegsIfId_0/PCIn"
         ]
       }
     }

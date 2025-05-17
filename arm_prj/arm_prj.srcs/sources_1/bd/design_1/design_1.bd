@@ -258,12 +258,12 @@
           "boundary_crc": "0x0"
         },
         "ports": {
-          "memAddr": {
+          "PC": {
             "direction": "I",
             "left": "31",
             "right": "0"
           },
-          "mem": {
+          "instruction": {
             "direction": "O",
             "left": "31",
             "right": "0"
@@ -324,15 +324,13 @@
       },
       "InstructionMemory_0_mem": {
         "ports": [
-          "InstructionMemory_0/mem",
           "register_0/pin"
         ]
       },
       "ProgramCounter_0_pcOut": {
         "ports": [
           "ProgramCounter_0/pcOut",
-          "Adder/b",
-          "InstructionMemory_0/memAddr"
+          "Adder/b"
         ]
       },
       "Mux2to1_0_out": {

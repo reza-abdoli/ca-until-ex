@@ -1,0 +1,3 @@
+design_ARM_ARM_0_0.v,verilog,xil_defaultlib,../../../bd/design_ARM/ip/design_ARM_ARM_0_0/sim/design_ARM_ARM_0_0.v,
+design_ARM.v,verilog,xil_defaultlib,../../../bd/design_ARM/sim/design_ARM.v,
+glbl.v,Verilog,xil_defaultlib,glbl.v

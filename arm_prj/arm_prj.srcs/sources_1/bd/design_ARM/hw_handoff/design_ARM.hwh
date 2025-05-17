@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Sat May 17 03:17:58 2025" VIVADOVERSION="2018.3">
+
+  <SYSTEMINFO ARCH="zynq" DEVICE="7z010" NAME="design_ARM" PACKAGE="clg400" SPEEDGRADE="-1"/>
+
+  <EXTERNALPORTS>
+    <PORT DIR="O" LEFT="17" NAME="MEM_SRAM_ADDR_0" RIGHT="0" SIGIS="undef" SIGNAME="ARM_0_MEM_SRAM_ADDR">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="ARM_0" PORT="MEM_SRAM_ADDR"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="0" NAME="MEM_SRAM_CE_N_0" RIGHT="0" SIGIS="undef" SIGNAME="ARM_0_MEM_SRAM_CE_N">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="ARM_0" PORT="MEM_SRAM_CE_N"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="IO" LEFT="15" NAME="MEM_SRAM_DQ_0" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_MEM_SRAM_DQ_0">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="ARM_0" PORT="MEM_SRAM_DQ"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="0" NAME="MEM_SRAM_LB_N_0" RIGHT="0" SIGIS="undef" SIGNAME="ARM_0_MEM_SRAM_LB_N">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="ARM_0" PORT="MEM_SRAM_LB_N"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="0" NAME="MEM_SRAM_OE_N_0" RIGHT="0" SIGIS="undef" SIGNAME="ARM_0_MEM_SRAM_OE_N">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="ARM_0" PORT="MEM_SRAM_OE_N"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="0" NAME="MEM_SRAM_UB_N_0" RIGHT="0" SIGIS="undef" SIGNAME="ARM_0_MEM_SRAM_UB_N">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="ARM_0" PORT="MEM_SRAM_UB_N"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="0" NAME="MEM_SRAM_WE_N_0" RIGHT="0" SIGIS="undef" SIGNAME="ARM_0_MEM_SRAM_WE_N">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="ARM_0" PORT="MEM_SRAM_WE_N"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT CLKFREQUENCY="100000000" DIR="I" NAME="clk_0" SIGIS="clk" SIGNAME="External_Ports_clk_0">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="ARM_0" PORT="clk"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="forwardENIn_0" SIGIS="undef" SIGNAME="External_Ports_forwardENIn_0">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="ARM_0" PORT="forwardENIn"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="rst_0" SIGIS="rst" SIGNAME="External_Ports_rst_0">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="ARM_0" PORT="rst"/>
+      </CONNECTIONS>
+    </PORT>
+  </EXTERNALPORTS>
+
+  <EXTERNALINTERFACES/>
+
+  <MODULES>
+    <MODULE COREREVISION="1" FULLNAME="/ARM_0" HWVERSION="1.0" INSTANCE="ARM_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="ARM" VLNV="xilinx.com:module_ref:ARM:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="design_ARM_ARM_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="clk" SIGIS="clk" SIGNAME="External_Ports_clk_0">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="clk_0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="rst" SIGIS="rst" SIGNAME="External_Ports_rst_0">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="rst_0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="forwardENIn" SIGIS="undef" SIGNAME="External_Ports_forwardENIn_0">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="forwardENIn_0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="IO" LEFT="15" NAME="MEM_SRAM_DQ" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_MEM_SRAM_DQ_0">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="MEM_SRAM_DQ_0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="17" NAME="MEM_SRAM_ADDR" RIGHT="0" SIGIS="undef" SIGNAME="ARM_0_MEM_SRAM_ADDR">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="MEM_SRAM_ADDR_0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="0" NAME="MEM_SRAM_UB_N" RIGHT="0" SIGIS="undef" SIGNAME="ARM_0_MEM_SRAM_UB_N">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="MEM_SRAM_UB_N_0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="0" NAME="MEM_SRAM_LB_N" RIGHT="0" SIGIS="undef" SIGNAME="ARM_0_MEM_SRAM_LB_N">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="MEM_SRAM_LB_N_0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="0" NAME="MEM_SRAM_WE_N" RIGHT="0" SIGIS="undef" SIGNAME="ARM_0_MEM_SRAM_WE_N">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="MEM_SRAM_WE_N_0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="0" NAME="MEM_SRAM_CE_N" RIGHT="0" SIGIS="undef" SIGNAME="ARM_0_MEM_SRAM_CE_N">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="MEM_SRAM_CE_N_0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="0" NAME="MEM_SRAM_OE_N" RIGHT="0" SIGIS="undef" SIGNAME="ARM_0_MEM_SRAM_OE_N">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="MEM_SRAM_OE_N_0"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+  </MODULES>
+
+</EDKSYSTEM>

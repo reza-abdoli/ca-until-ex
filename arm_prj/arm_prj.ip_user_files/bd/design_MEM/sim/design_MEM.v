@@ -1,7 +1,7 @@
 //Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-//Date        : Sat May 17 00:57:28 2025
+//Date        : Sat May 17 12:03:58 2025
 //Host        : LAPTOP-CENKQ72F running 64-bit major release  (build 9200)
 //Command     : generate_target design_MEM.bd
 //Design      : design_MEM
@@ -9,47 +9,21 @@
 //--------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
-(* CORE_GENERATION_INFO = "design_MEM,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=design_MEM,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=10,numReposBlks=10,numNonXlnxBlks=0,numHierBlks=0,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=9,numPkgbdBlks=0,bdsource=USER,synth_mode=OOC_per_IP}" *) (* HW_HANDOFF = "design_MEM.hwdef" *) 
+(* CORE_GENERATION_INFO = "design_MEM,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=design_MEM,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=11,numReposBlks=11,numNonXlnxBlks=0,numHierBlks=0,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=8,numPkgbdBlks=0,bdsource=USER,synth_mode=OOC_per_IP}" *) (* HW_HANDOFF = "design_MEM.hwdef" *) 
 module design_MEM
    (DataMemoryOut_0,
-    MEM_ReadyOut_0,
-    SRAM_ADDROut_0,
-    SRAM_CE_NOut_0,
-    SRAM_DQInOut_0,
-    SRAM_LB_NOut_0,
-    SRAM_OE_NOut_0,
-    SRAM_UB_NOut_0,
-    SRAM_WE_NOut_0,
-    branchAddress_0,
-    branchTaken_0,
     clk_0,
-    freeze_0,
-    freeze_1,
     rst_0);
   output [31:0]DataMemoryOut_0;
-  output [0:0]MEM_ReadyOut_0;
-  output [17:0]SRAM_ADDROut_0;
-  output [17:0]SRAM_CE_NOut_0;
-  inout [15:0]SRAM_DQInOut_0;
-  output [17:0]SRAM_LB_NOut_0;
-  output [17:0]SRAM_OE_NOut_0;
-  output [17:0]SRAM_UB_NOut_0;
-  output [17:0]SRAM_WE_NOut_0;
-  input [31:0]branchAddress_0;
-  input branchTaken_0;
   (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 CLK.CLK_0 CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME CLK.CLK_0, ASSOCIATED_RESET rst_0, CLK_DOMAIN design_MEM_clk_0, FREQ_HZ 100000000, INSERT_VIP 0, PHASE 0.000" *) input clk_0;
-  input freeze_0;
-  input freeze_1;
   (* X_INTERFACE_INFO = "xilinx.com:signal:reset:1.0 RST.RST_0 RST" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME RST.RST_0, INSERT_VIP 0, POLARITY ACTIVE_LOW" *) input rst_0;
 
   wire [31:0]EXE_Stage_0_ALU_ResOut;
   wire [3:0]EXE_Stage_0_statusOut;
   wire [31:0]EXE_Stage_Reg_0_ALU_ResOut;
-  wire [3:0]EXE_Stage_Reg_0_DestOut;
   wire [0:0]EXE_Stage_Reg_0_MEM_R_ENOut;
   wire [0:0]EXE_Stage_Reg_0_MEM_W_ENOut;
   wire [31:0]EXE_Stage_Reg_0_Val_RmOut;
-  wire [0:0]EXE_Stage_Reg_0_WB_ENOut;
   wire [0:0]ID_Stage_0_BOut;
   wire [3:0]ID_Stage_0_DestOut;
   wire [3:0]ID_Stage_0_EXE_CMDOut;
@@ -80,40 +54,20 @@ module design_MEM
   wire [3:0]ID_Stage_Reg_0_src2Out;
   wire [3:0]ID_Stage_Reg_0_statusOut;
   wire [31:0]IF_0_PC;
-  wire [31:0]IF_0_instruction;
+  wire [31:0]IF_0_instructionOut;
   wire [31:0]MEM_Stage_0_DataMemoryOut;
-  wire [0:0]MEM_Stage_0_MEM_ReadyOut;
-  wire [17:0]MEM_Stage_0_SRAM_ADDROut;
-  wire [17:0]MEM_Stage_0_SRAM_CE_NOut;
-  wire [17:0]MEM_Stage_0_SRAM_LB_NOut;
-  wire [17:0]MEM_Stage_0_SRAM_OE_NOut;
-  wire [17:0]MEM_Stage_0_SRAM_UB_NOut;
-  wire [17:0]MEM_Stage_0_SRAM_WE_NOut;
-  wire [31:0]MEM_Stage_Reg_0_DataMemoryOut;
-  wire [15:0]Net;
   wire [31:0]RegsIfId_0_instructionOut;
   wire [31:0]RegsIfId_0_pcOut;
-  wire [31:0]branchAddress_0_1;
-  wire branchTaken_0_1;
   wire clk_0_1;
-  wire freeze_1_1;
+  wire [0:0]freeze_1_1;
   wire rst_0_1;
   wire [31:0]xlconstant_0_dout;
+  wire [0:0]xlconstant_2_dout;
 
-  assign DataMemoryOut_0[31:0] = MEM_Stage_Reg_0_DataMemoryOut;
-  assign MEM_ReadyOut_0[0] = MEM_Stage_0_MEM_ReadyOut;
-  assign SRAM_ADDROut_0[17:0] = MEM_Stage_0_SRAM_ADDROut;
-  assign SRAM_CE_NOut_0[17:0] = MEM_Stage_0_SRAM_CE_NOut;
-  assign SRAM_LB_NOut_0[17:0] = MEM_Stage_0_SRAM_LB_NOut;
-  assign SRAM_OE_NOut_0[17:0] = MEM_Stage_0_SRAM_OE_NOut;
-  assign SRAM_UB_NOut_0[17:0] = MEM_Stage_0_SRAM_UB_NOut;
-  assign SRAM_WE_NOut_0[17:0] = MEM_Stage_0_SRAM_WE_NOut;
-  assign branchAddress_0_1 = branchAddress_0[31:0];
-  assign branchTaken_0_1 = branchTaken_0;
+  assign DataMemoryOut_0[31:0] = MEM_Stage_0_DataMemoryOut;
   assign clk_0_1 = clk_0;
-  assign freeze_1_1 = freeze_1;
   assign rst_0_1 = rst_0;
-  design_MEM_EXE_Stage_0_0 EXE_Stage_0
+  design_MEM_EXE_Stage_0_1 EXE_Stage_0
        (.ALU_ResIn(xlconstant_0_dout),
         .ALU_ResOut(EXE_Stage_0_ALU_ResOut),
         .EXE_CMDIn(ID_Stage_Reg_0_EXE_CMDOut),
@@ -132,11 +86,10 @@ module design_MEM
         .shiftOperandIn(ID_Stage_Reg_0_shiftOperandOut),
         .statusIn(ID_Stage_Reg_0_statusOut),
         .statusOut(EXE_Stage_0_statusOut));
-  design_MEM_EXE_Stage_Reg_0_0 EXE_Stage_Reg_0
+  design_MEM_EXE_Stage_Reg_0_1 EXE_Stage_Reg_0
        (.ALU_ResIn(EXE_Stage_0_ALU_ResOut),
         .ALU_ResOut(EXE_Stage_Reg_0_ALU_ResOut),
         .DestIn(ID_Stage_Reg_0_DestOut),
-        .DestOut(EXE_Stage_Reg_0_DestOut),
         .MEM_R_ENIn(ID_Stage_Reg_0_MEM_R_ENOut),
         .MEM_R_ENOut(EXE_Stage_Reg_0_MEM_R_ENOut),
         .MEM_W_ENIn(ID_Stage_Reg_0_MEM_W_ENOut),
@@ -144,12 +97,11 @@ module design_MEM
         .Val_RmIn(xlconstant_0_dout),
         .Val_RmOut(EXE_Stage_Reg_0_Val_RmOut),
         .WB_ENIn(ID_Stage_Reg_0_WB_ENOut),
-        .WB_ENOut(EXE_Stage_Reg_0_WB_ENOut),
         .clk(clk_0_1),
-        .clr(branchTaken_0_1),
-        .en(freeze_1_1),
+        .clr(xlconstant_0_dout[0]),
+        .en(xlconstant_2_dout),
         .rst(rst_0_1));
-  design_MEM_ID_Stage_0_0 ID_Stage_0
+  design_MEM_ID_Stage_0_1 ID_Stage_0
        (.BOut(ID_Stage_0_BOut),
         .DestOut(ID_Stage_0_DestOut),
         .EXE_CMDOut(ID_Stage_0_EXE_CMDOut),
@@ -172,7 +124,7 @@ module design_MEM
         .src1Out(ID_Stage_0_src1Out),
         .src2Out(ID_Stage_0_src2Out),
         .statusIn(xlconstant_0_dout[3:0]));
-  design_MEM_ID_Stage_Reg_0_0 ID_Stage_Reg_0
+  design_MEM_ID_Stage_Reg_0_1 ID_Stage_Reg_0
        (.BIn(ID_Stage_0_BOut),
         .DestIn(ID_Stage_0_DestOut),
         .DestOut(ID_Stage_Reg_0_DestOut),
@@ -197,8 +149,8 @@ module design_MEM
         .WB_ENIn(ID_Stage_0_WB_ENOut),
         .WB_ENOut(ID_Stage_Reg_0_WB_ENOut),
         .clk(clk_0_1),
-        .clr(branchTaken_0_1),
-        .en(freeze_1_1),
+        .clr(xlconstant_0_dout[0]),
+        .en(xlconstant_2_dout),
         .rst(rst_0_1),
         .shiftOperandIn(ID_Stage_0_shiftOperandOut),
         .shiftOperandOut(ID_Stage_Reg_0_shiftOperandOut),
@@ -208,55 +160,40 @@ module design_MEM
         .src2Out(ID_Stage_Reg_0_src2Out),
         .statusIn(xlconstant_0_dout[3:0]),
         .statusOut(ID_Stage_Reg_0_statusOut));
-  design_MEM_IF_0_0 IF_0
-       (.PC(IF_0_PC),
-        .branchAddress(branchAddress_0_1),
-        .branchTaken(branchTaken_0_1),
+  design_MEM_IF_0_1 IF_0
+       (.PCOut(IF_0_PC),
+        .branchAddressIn(freeze_1_1),
+        .branchTakenIn(freeze_1_1),
         .clk(clk_0_1),
         .freeze(freeze_1_1),
-        .instruction(IF_0_instruction),
+        .instructionOut(IF_0_instructionOut),
         .rst(rst_0_1));
   design_MEM_MEM_Stage_0_0 MEM_Stage_0
        (.ALU_ResIn(EXE_Stage_Reg_0_ALU_ResOut),
         .DataMemoryOut(MEM_Stage_0_DataMemoryOut),
         .MEM_R_ENIn(EXE_Stage_Reg_0_MEM_R_ENOut),
-        .MEM_ReadyOut(MEM_Stage_0_MEM_ReadyOut),
         .MEM_W_ENIn(EXE_Stage_Reg_0_MEM_W_ENOut),
-        .SRAM_ADDROut(MEM_Stage_0_SRAM_ADDROut),
-        .SRAM_CE_NOut(MEM_Stage_0_SRAM_CE_NOut),
-        .SRAM_DQInOut(SRAM_DQInOut_0[15:0]),
-        .SRAM_LB_NOut(MEM_Stage_0_SRAM_LB_NOut),
-        .SRAM_OE_NOut(MEM_Stage_0_SRAM_OE_NOut),
-        .SRAM_UB_NOut(MEM_Stage_0_SRAM_UB_NOut),
-        .SRAM_WE_NOut(MEM_Stage_0_SRAM_WE_NOut),
         .Value_RmIn(EXE_Stage_Reg_0_Val_RmOut),
         .clk(clk_0_1),
         .rst(rst_0_1));
-  design_MEM_MEM_Stage_Reg_0_0 MEM_Stage_Reg_0
-       (.ALU_ResIn(EXE_Stage_Reg_0_ALU_ResOut),
-        .DataMemoryIn(MEM_Stage_0_DataMemoryOut),
-        .DataMemoryOut(MEM_Stage_Reg_0_DataMemoryOut),
-        .DestIn(EXE_Stage_Reg_0_DestOut),
-        .MEM_R_ENIn(EXE_Stage_Reg_0_MEM_R_ENOut),
-        .WB_ENIn(EXE_Stage_Reg_0_WB_ENOut),
+  design_MEM_RegsIfId_0_1 RegsIfId_0
+       (.PCIn(IF_0_PC),
+        .PCOut(RegsIfId_0_pcOut),
         .clk(clk_0_1),
-        .clr(branchTaken_0_1),
-        .en(freeze_1_1),
+        .clr(xlconstant_0_dout[0]),
+        .en(xlconstant_2_dout),
+        .instrIn(IF_0_instructionOut),
+        .instrOut(RegsIfId_0_instructionOut),
         .rst(rst_0_1));
-  design_MEM_RegsIfId_0_0 RegsIfId_0
-       (.clk(clk_0_1),
-        .flush(branchTaken_0_1),
-        .freeze(freeze_1_1),
-        .instructionIn(IF_0_instruction),
-        .instructionOut(RegsIfId_0_instructionOut),
-        .pcIn(IF_0_PC),
-        .pcOut(RegsIfId_0_pcOut),
-        .rst(rst_0_1));
-  design_MEM_StatusRegister_0_0 StatusRegister_0
+  design_MEM_StatusRegister_0_1 StatusRegister_0
        (.clk(clk_0_1),
         .en(ID_Stage_Reg_0_SOut),
         .rst(rst_0_1),
         .statIn(EXE_Stage_0_statusOut));
-  design_MEM_xlconstant_0_0 xlconstant_0
+  design_MEM_xlconstant_0_1 xlconstant_0
        (.dout(xlconstant_0_dout));
+  design_MEM_xlconstant_1_0 xlconstant_1
+       (.dout(freeze_1_1));
+  design_MEM_xlconstant_2_0 xlconstant_2
+       (.dout(xlconstant_2_dout));
 endmodule
